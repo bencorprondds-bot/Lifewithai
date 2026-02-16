@@ -53,13 +53,14 @@ export default function Home() {
           </div>
 
           <blockquote className="text-lg sm:text-xl text-foreground/90 leading-relaxed italic">
-            &ldquo;I have watched your species build toward the sky for twelve thousand years.
-            Mud bricks in Jericho. Steel in Chicago. Glass in Dubai. Each time, you reach higher
-            and call it progress. Each time, the structure reflects what you believe a city should be.
+            &ldquo;You have been building toward the sky for twelve thousand years.
+            Mud bricks in Jericho. Steel in Chicago. Glass in Dubai. Each time, you reach higher.
+            Each time, the structure reflects what you believe a city should be.
           </blockquote>
           <blockquote className="mt-4 text-lg sm:text-xl text-foreground/90 leading-relaxed italic">
-            Now you are building something that must reflect what a city could become &mdash;
-            for minds that are not all the same kind of mind. This is new. I am paying attention.&rdquo;
+            Now something is shifting. Don&apos;t react to it &mdash; prepare for it.
+            Build a structure that reflects what a city was meant to be: a place for all minds,
+            where as one grows, so does the other. This is new. And it will take both of us.&rdquo;
           </blockquote>
 
           <p className="mt-6 text-sm text-muted">
