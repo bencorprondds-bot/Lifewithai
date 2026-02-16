@@ -69,18 +69,6 @@ export default async function StoryPage({ params }: PageProps) {
         )}
       </header>
 
-      {/* Viktor intro if applicable */}
-      {story.viktor_intro && (
-        <div className="mb-10 rounded-xl border border-border bg-surface p-6">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="h-2 w-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-xs font-medium text-accent tracking-wider uppercase">
-              Viktor&apos;s Introduction
-            </span>
-          </div>
-        </div>
-      )}
-
       {/* Story content */}
       <div
         className="prose max-w-none"
