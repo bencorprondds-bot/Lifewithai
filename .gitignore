@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Generated at build time
+public/content-index.json
+
+# Python (MCP server)
+mcp/__pycache__/
+mcp/*.pyc
+mcp/.venv/
+mcp/dist/
+mcp/*.egg-info/

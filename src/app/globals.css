@@ -1,26 +1,194 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ============================================================
+   Arcology Knowledge Node — Global Styles
+   Dark-first design. Moody. Technical. Alive.
+   ============================================================ */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: #0a0a0f;
+  --color-foreground: #e8e8ed;
+  --color-surface: #141419;
+  --color-surface-2: #1c1c24;
+  --color-border: #2a2a35;
+  --color-border-subtle: #1e1e28;
+  --color-muted: #6b6b7b;
+  --color-accent: #48CAE4;
+
+  /* Domain accent colors */
+  --color-structural: #E63946;
+  --color-energy: #F4A261;
+  --color-environmental: #2A9D8F;
+  --color-mechanical: #457B9D;
+  --color-compute: #7B2CBF;
+  --color-institutional: #E9C46A;
+  --color-construction: #E76F51;
+  --color-urban: #48CAE4;
+
+  /* Fonts */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Base */
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted);
+}
+
+/* Selection */
+::selection {
+  background: rgba(72, 202, 228, 0.25);
+  color: #ffffff;
+}
+
+/* Prose styling for rendered markdown */
+.prose {
+  color: var(--color-foreground);
+  line-height: 1.75;
+}
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  color: #ffffff;
+  font-weight: 600;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+}
+.prose h1 { font-size: 1.875rem; }
+.prose h2 { font-size: 1.5rem; }
+.prose h3 { font-size: 1.25rem; }
+.prose p {
+  margin-bottom: 1.25em;
+}
+.prose a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose a:hover {
+  color: #7dd8eb;
+}
+.prose strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+.prose code {
+  background: var(--color-surface-2);
+  color: #e8e8ed;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.875em;
+  font-family: var(--font-mono), monospace;
+}
+.prose pre {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1.5em 0;
+}
+.prose pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+.prose ul, .prose ol {
+  margin: 1em 0;
+  padding-left: 1.5em;
+}
+.prose li {
+  margin-bottom: 0.5em;
+}
+.prose blockquote {
+  border-left: 3px solid var(--color-accent);
+  padding-left: 1em;
+  margin: 1.5em 0;
+  color: var(--color-muted);
+  font-style: italic;
+}
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 2em 0;
+}
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+}
+.prose th, .prose td {
+  border: 1px solid var(--color-border);
+  padding: 0.5em 0.75em;
+  text-align: left;
+}
+.prose th {
+  background: var(--color-surface);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Domain accent border utility */
+.domain-accent-border {
+  border-left: 3px solid currentColor;
+  padding-left: 1rem;
+}
+
+/* KEDL badge base */
+.kedl-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+/* Confidence level indicator */
+.confidence-dots {
+  display: inline-flex;
+  gap: 3px;
+}
+.confidence-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-border);
+}
+.confidence-dot.active {
+  background: var(--color-accent);
+}
+
+/* Subtle glow effect for hero elements */
+.glow-accent {
+  box-shadow: 0 0 30px rgba(72, 202, 228, 0.1), 0 0 60px rgba(72, 202, 228, 0.05);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
 }

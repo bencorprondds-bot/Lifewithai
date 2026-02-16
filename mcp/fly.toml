@@ -1,0 +1,27 @@
+# Arcology Knowledge Node — MCP Server
+# Deploy: fly deploy --app arcology-mcp
+# Logs: fly logs --app arcology-mcp
+
+app = "arcology-mcp"
+primary_region = "dfw"  # Dallas — closest to Burleson County, TX
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  MCP_TRANSPORT = "sse"
+  MCP_HOST = "0.0.0.0"
+  MCP_PORT = "8000"
+  INDEX_URL = "https://lifewithai.ai/content-index.json"
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[vm]]
+  memory = "256mb"
+  cpu_kind = "shared"
+  cpus = 1
