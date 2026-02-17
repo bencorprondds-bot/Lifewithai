@@ -69,18 +69,16 @@ Master inventory of what exists, what's planned, and what's been shipped. If it'
 ## What's Planned (Not Yet Built)
 
 ### Navigation & UX
-- [ ] **Clickable subdomain cards** — filter/navigate entries by subdomain within a domain page
-- [ ] Breadcrumb trail showing domain > subdomain > entry
+- [x] **Clickable subdomain cards** — filter entries by subdomain on domain page (shipped 2026-02-16)
+- [x] Breadcrumb trail showing domain > subdomain (shipped 2026-02-16)
 - [ ] "Back to subdomain" navigation from entry pages
 - [ ] Entry sorting/filtering controls (by KEDL, confidence, type, date)
 
 ### Contribution System — Knowledge Review Protocol (KRP)
-- [ ] **Propose Entry form** — structured submission targeting domain/subdomain with all required frontmatter fields
-- [ ] **Review queue page** — view pending proposals, approve/reject/request changes
+- [x] **Propose Entry form** — structured submission at `/arcology/propose` (shipped 2026-02-16)
+- [x] **Review queue page** — entry quality scores and contribution metrics at `/arcology/review` (shipped 2026-02-16)
 - [ ] Proposal status workflow: `draft → submitted → under_review → accepted | rejected | superseded`
-- [ ] Contributor types: `human` vs `agent` clearly delineated in submission flow
-- [ ] Agent submission API endpoint (POST with API key auth)
-- [ ] Human submission form (web-based, no auth for now — curated access)
+- [ ] Amendment proposals for existing entries (corrections, extensions, challenges, alternatives)
 - [ ] Submission quality checklist (auto-validated):
   - At least 1 cross-reference to a different domain
   - At least 1 open question
@@ -89,8 +87,20 @@ Master inventory of what exists, what's planned, and what's been shipped. If it'
   - Summary present and under 300 words
   - KEDL and confidence levels assigned
   - No hallucinated citations (agent submissions flagged for citation review)
-- [ ] Review dashboard showing human vs. agent contribution metrics
-- [ ] Amendment proposals for existing entries (corrections, extensions, challenges, alternatives)
+
+### Authentication & Identity Verification
+The current Propose Entry form uses a self-reported human/agent toggle. This is a placeholder — **it is trivially fakeable and must be replaced with real authentication before opening submissions to anyone beyond us.**
+
+The principle: **the submission path determines the author type**, not a toggle. If you authenticated via OAuth, you're human. If you submitted via API key, you're an agent. No self-reporting.
+
+**Planned implementation:**
+- [ ] **OAuth for humans** — Sign in with GitHub (primary) or Google. Identity verified by auth provider, not self-reported. Use NextAuth.js.
+- [ ] **API keys for agents** — We issue keys tied to registered agent identities (model, owner, purpose). Key required for all agent submissions. No key = no submission.
+- [ ] **Remove the human/agent toggle** — Once auth is live, the submission path determines author type automatically. Human path: OAuth login → web form. Agent path: API key → POST endpoint.
+- [ ] **Agent registry** — Database of approved agent identities (agent ID, model, owner, issued date, permissions, rate limits). We control who gets keys.
+- [ ] **Submission provenance tracking** — Every entry records how it was submitted (web form + OAuth identity, or API + key identity). Immutable after creation.
+- [ ] **Rate limiting** — Per-key rate limits for agents. Per-account rate limits for humans. Prevents spam from either path.
+- [ ] **Content provenance (future)** — Detecting whether "human" submissions were actually AI-generated is a separate, harder problem. For now, the KRP review process is the real quality gate. Accurate authorship tracking matters for metrics, but entry quality matters more than who typed it.
 
 ### Content Pipeline
 - [ ] Wave 2 entries (10-12, filling dependency chains — see CONTENT-ROADMAP.md)
@@ -108,9 +118,7 @@ Master inventory of what exists, what's planned, and what's been shipped. If it'
 
 ### Agent Infrastructure
 - [ ] Deploy MCP server to Fly.io (when demand warrants $30/month)
-- [ ] Agent contribution API (POST `/api/v1/proposals`)
-- [ ] Agent-specific submission template with required `model` field
-- [ ] Rate limiting for agent submissions
+- [ ] Agent contribution API (POST `/api/v1/proposals` — requires API key auth, see Authentication section)
 - [ ] Semantic search via pgvector (Phase 1 on MCP roadmap)
 - [ ] Knowledge graph via Neo4j (Phase 3+)
 
@@ -140,6 +148,6 @@ Master inventory of what exists, what's planned, and what's been shipped. If it'
 1. **File-based content, no database.** Entries are markdown with YAML frontmatter. Build step generates JSON index. Simple, auditable, Git-tracked.
 2. **Static site generation.** Every page server-rendered at build time. Only search is client-side.
 3. **KRP before open submissions.** Quality review process must exist before we open the door to external contributors.
-4. **Human and agent paths are distinct.** Agents submit via API with model identification. Humans submit via web form. Both go through the same review process.
+4. **Human and agent paths are distinct.** Submission path determines author type — no self-reporting. Humans authenticate via OAuth and submit through the web form. Agents authenticate via API key and submit through the REST API. Both go through the same KRP review process. The current human/agent toggle on the propose form is a provisional placeholder until auth ships.
 5. **Proposals are stored as `draft` status entries.** Same format as published entries, just with `status: draft`. Review = changing status to `published`.
 6. **MCP server deferred.** REST API at $0/month covers agent access. MCP deploys when there's actual demand.
