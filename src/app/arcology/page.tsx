@@ -76,7 +76,7 @@ export default function ArcologyLandingPage() {
       </section>
 
       {/* Links */}
-      <section className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
         <Link
           href="/arcology/search"
           className="rounded-xl border border-border bg-surface p-6 text-center hover:border-accent/30 transition-all"
@@ -97,6 +97,20 @@ export default function ArcologyLandingPage() {
         >
           <h3 className="font-semibold text-white">Stats</h3>
           <p className="mt-1 text-sm text-muted">Platform metrics dashboard</p>
+        </Link>
+        <Link
+          href="/arcology/propose"
+          className="rounded-xl border border-accent/20 bg-surface p-6 text-center hover:border-accent/30 transition-all"
+        >
+          <h3 className="font-semibold text-accent">Propose Entry</h3>
+          <p className="mt-1 text-sm text-muted">Submit a new knowledge entry</p>
+        </Link>
+        <Link
+          href="/arcology/review"
+          className="rounded-xl border border-border bg-surface p-6 text-center hover:border-accent/30 transition-all"
+        >
+          <h3 className="font-semibold text-white">Review Queue</h3>
+          <p className="mt-1 text-sm text-muted">Knowledge Review Protocol</p>
         </Link>
       </section>
     </div>
