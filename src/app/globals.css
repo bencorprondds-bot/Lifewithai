@@ -130,6 +130,13 @@ body {
   border-top: 1px solid var(--color-border);
   margin: 2em 0;
 }
+.prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 2em auto;
+  display: block;
+}
 .prose table {
   width: 100%;
   border-collapse: collapse;
