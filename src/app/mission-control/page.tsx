@@ -21,8 +21,7 @@ export default function MissionControlPage() {
   const wave2Items = pipeline?.queue.filter(q => q.wave === 2) || [];
   const wave1Complete = wave1Items.filter(q => q.status === 'completed').length;
   const wave2Complete = wave2Items.filter(q => q.status === 'completed').length;
-  const totalExperts = pipeline?.queue.reduce((sum, q) => sum + q.experts_found, 0) || 0;
-  const totalAISystems = pipeline?.queue.reduce((sum, q) => sum + q.ai_systems_found, 0) || 0;
+  // Expert/AI system counts tracked internally only — not shown publicly until contributors opt in
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
@@ -54,11 +53,9 @@ export default function MissionControlPage() {
 
       {/* Scoreboard */}
       <section className="mb-12">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           <ScoreCard label="Stories Shipped" value={stories.length} detail={`of ${mc.stories_total}`} />
           <ScoreCard label="Research Complete" value={pipeline?.completed || 0} detail={`of ${pipeline?.total || 0}`} />
-          <ScoreCard label="Experts Found" value={totalExperts} />
-          <ScoreCard label="AI Systems" value={totalAISystems} />
           <ScoreCard label="Knowledge Entries" value={stats.total_entries} />
           <ScoreCard label="Sessions Run" value={pipeline?.session_counter || 0} />
         </div>
@@ -281,10 +278,7 @@ function PipelineRow({ item }: { item: PipelineItem }) {
         <p className="text-xs text-muted truncate">{item.domain}</p>
       </div>
       {item.status === 'completed' && (
-        <div className="flex items-center gap-3 text-xs text-muted shrink-0">
-          <span>{item.experts_found} experts</span>
-          <span>{item.ai_systems_found} AI</span>
-        </div>
+        <span className="text-xs text-accent shrink-0">Complete</span>
       )}
     </div>
   );
