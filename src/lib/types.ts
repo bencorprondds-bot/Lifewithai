@@ -178,6 +178,7 @@ export interface ContentIndex {
   blog_posts: BlogPost[];
   pages: Page[];
   aggregate_stats: AggregateStats;
+  mission_control?: MissionControlData;
 }
 
 export interface AggregateStats {
@@ -193,6 +194,43 @@ export interface AggregateStats {
   domain_balance_index: number;
   schema_completeness: number;
   orphan_entry_rate: number;
+}
+
+// --- Mission Control / Pipeline Types ---
+
+export type PipelineItemStatus = 'completed' | 'in_progress' | 'pending' | 'failed';
+
+export interface PipelineItem {
+  order: number;
+  domain: string;
+  domain_slug: string;
+  subdomain: string;
+  subdomain_slug: string;
+  wave: number;
+  status: PipelineItemStatus;
+  started_at: string | null;
+  completed_at: string | null;
+  experts_found: number;
+  ai_systems_found: number;
+  report_path: string | null;
+  retry_count: number;
+  error: string | null;
+}
+
+export interface PipelineData {
+  version: number;
+  last_updated: string;
+  session_counter: number;
+  completed: number;
+  total: number;
+  queue: PipelineItem[];
+}
+
+export interface MissionControlData {
+  pipeline: PipelineData | null;
+  stories_shipped: number;
+  stories_total: number;
+  generated_at: string;
 }
 
 // --- KEDL & Confidence Display Info ---

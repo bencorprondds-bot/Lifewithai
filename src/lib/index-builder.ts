@@ -16,6 +16,7 @@ import {
   getAllStories,
   getAllBlogPosts,
   getAllPages,
+  getMissionControlData,
 } from './content';
 import { computeDomainStats, computeAggregateStats } from './stats';
 import type { ContentIndex } from './types';
@@ -38,6 +39,14 @@ function buildIndex(): void {
   const domainStats = computeDomainStats(entries, domains);
   const aggregateStats = computeAggregateStats(entries, domains);
 
+  // Mission Control pipeline data
+  const missionControl = getMissionControlData();
+  if (missionControl.pipeline) {
+    console.log(`[index-builder] Pipeline: ${missionControl.pipeline.completed}/${missionControl.pipeline.total} research items complete`);
+  } else {
+    console.log('[index-builder] Pipeline data not found (research-queue.json missing)');
+  }
+
   const index: ContentIndex = {
     generated_at: new Date().toISOString(),
     entries,
@@ -47,6 +56,7 @@ function buildIndex(): void {
     blog_posts: blogPosts,
     pages,
     aggregate_stats: aggregateStats,
+    mission_control: missionControl,
   };
 
   const outputPath = path.join(process.cwd(), 'public', 'content-index.json');

@@ -7,6 +7,7 @@ const NAV_ITEMS = [
   { href: '/stories', label: 'Stories' },
   { href: '/blog', label: 'Blog' },
   { href: '/arcology', label: 'Arcology' },
+  { href: '/mission-control', label: 'Mission Control' },
   { href: '/about', label: 'About' },
 ];
 

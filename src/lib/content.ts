@@ -18,6 +18,8 @@ import type {
   Page,
   PageFrontmatter,
   Domain,
+  PipelineData,
+  MissionControlData,
 } from './types';
 import { DOMAINS } from './types';
 
@@ -258,4 +260,41 @@ function parsePage(filePath: string): Page | null {
     console.error(`Error parsing page ${filePath}:`, err);
     return null;
   }
+}
+
+// --- Mission Control Pipeline Data ---
+
+// Pipeline data sources (checked in order):
+// 1. In-repo snapshot: content/pipeline.json (works on Netlify)
+// 2. Google Drive state file: ../state/research-queue.json (works locally)
+const PIPELINE_SNAPSHOT = path.join(CONTENT_DIR, 'pipeline.json');
+const PIPELINE_DRIVE = path.join(path.resolve(process.cwd(), '..'), 'state', 'research-queue.json');
+
+export function getPipelineData(): PipelineData | null {
+  // Try in-repo snapshot first (works on Netlify)
+  for (const filePath of [PIPELINE_SNAPSHOT, PIPELINE_DRIVE]) {
+    try {
+      if (!fs.existsSync(filePath)) continue;
+      const raw = fs.readFileSync(filePath, 'utf-8').replace(/^\uFEFF/, '');
+      const data = JSON.parse(raw) as PipelineData;
+      console.log(`[content] Pipeline data loaded from ${path.basename(filePath)}`);
+      return data;
+    } catch {
+      continue;
+    }
+  }
+  console.warn('[content] No pipeline data found');
+  return null;
+}
+
+export function getMissionControlData(): MissionControlData {
+  const pipeline = getPipelineData();
+  const stories = getAllStories();
+
+  return {
+    pipeline,
+    stories_shipped: stories.length,
+    stories_total: 50,
+    generated_at: new Date().toISOString(),
+  };
 }
