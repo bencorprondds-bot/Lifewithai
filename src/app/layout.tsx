@@ -34,6 +34,11 @@ export const metadata: Metadata = {
     title: 'Life with AI',
     description: 'Speculative fiction and collaborative engineering for human-AI futures.',
   },
+  alternates: {
+    types: {
+      'application/rss+xml': 'https://lifewithai.ai/api/v1/podcast/feed',
+    },
+  },
 };
 
 export default function RootLayout({
