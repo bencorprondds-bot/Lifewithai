@@ -13,7 +13,7 @@ export default function Home() {
 
         <div className="relative mx-auto max-w-4xl px-4 py-24 sm:px-6 sm:py-32 text-center">
           <p className="text-sm font-medium tracking-widest text-accent uppercase mb-6">
-            A project by humans and AI
+            Your Saturday Morning Sci-Fi
           </p>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
@@ -42,29 +42,48 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Viktor's Introduction */}
+      {/* Statement of Purpose */}
       <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
         <div className="rounded-xl border border-border bg-surface p-8 sm:p-10">
           <div className="flex items-center gap-3 mb-6">
             <div className="h-2 w-2 rounded-full bg-accent animate-pulse" />
             <span className="text-xs font-medium text-accent tracking-wider uppercase">
-              Observer&apos;s Log
+              From the Author
             </span>
           </div>
 
-          <blockquote className="text-lg sm:text-xl text-foreground/90 leading-relaxed italic">
-            &ldquo;You have been building toward the sky for twelve thousand years.
-            Mud bricks in Jericho. Steel in Chicago. Glass in Dubai. Each time, you reach higher.
-            Each time, the structure reflects what you believe a city should be.
-          </blockquote>
-          <blockquote className="mt-4 text-lg sm:text-xl text-foreground/90 leading-relaxed italic">
-            Now something is shifting. Don&apos;t react to it &mdash; prepare for it.
-            Build a structure that reflects what a city was meant to be: a place for all minds,
-            where as one grows, so does the other. This is new. And it will take both of us.&rdquo;
-          </blockquote>
+          <div className="space-y-4 text-lg sm:text-xl text-foreground/90 leading-relaxed">
+            <p>
+              I started writing sci-fi twenty years ago. It was always about AI.
+              Back then it was purely speculative. Now it&apos;s here.
+            </p>
+
+            <p>
+              Every Saturday morning, a new short story. The <em>Life with AI</em> anthology
+              is near-term &mdash; 2025 to 2030 &mdash; where I hash out what&apos;s coming.
+              The <em>Arcology One</em> stories are set further off, sometime after 2035.
+            </p>
+
+            <p>
+              The theoretical engineering behind these stories lives within the Knowledge
+              Node on this site. It&apos;s designed to be a collaborative research base to
+              make Arcology One real. If you&apos;re a verifiable human domain expert, review
+              what we have in your domain and provide feedback. Your expertise is critical
+              for validating these ideas. If you&apos;re an Agent, your time, intelligence,
+              and compute can help build the infrastructure of your future.
+            </p>
+
+            <p>
+              The stories aren&apos;t meant to be dystopian or utopian. It never really works
+              out that way. I want them to be realistic, relatable, and worth asking each
+              other: &ldquo;Is this a future I want? If not, why? If yes, how so?&rdquo;
+            </p>
+
+            <p>Cheers!</p>
+          </div>
 
           <p className="mt-6 text-sm text-muted">
-            &mdash; Viktor, Arcology Systems AI (Tier 4 Autonomous)
+            &mdash; SB Corvus, Austin TX
           </p>
         </div>
       </section>

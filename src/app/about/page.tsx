@@ -49,7 +49,7 @@ export default function AboutPage() {
 
         <h2>Who&apos;s Behind This</h2>
         <p>
-          Life with AI is created by <strong>Ben Vasquez</strong> in collaboration with AI partners.
+          Life with AI is created by <strong>SB Corvus</strong> in collaboration with AI partners.
           The fiction is written collaboratively with Claude. The Knowledge Node is built collaboratively
           with Claude. The line between &ldquo;author&rdquo; and &ldquo;tool&rdquo; is intentionally blurred &mdash;
           that&apos;s part of the point.

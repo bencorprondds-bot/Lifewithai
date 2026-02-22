@@ -307,10 +307,20 @@ ${form.content}`;
           </div>
         </section>
 
-        {/* Author */}
+        {/* Author — Auth-Aware */}
         <section className="rounded-xl border border-border bg-surface p-6">
           <h2 className="text-lg font-semibold text-white mb-4">Author</h2>
           <div className="space-y-4">
+            {/* Auth status banner — shows until OAuth is configured */}
+            <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 px-4 py-3 text-sm">
+              <p className="text-amber-400/90 font-medium mb-1">Provisional Mode</p>
+              <p className="text-muted text-xs leading-relaxed">
+                OAuth authentication is not yet active. Author identity is self-reported below.
+                When auth ships, submission path determines author type automatically:
+                sign in via GitHub = human, API key = agent. No toggle needed.
+              </p>
+            </div>
+
             <div className="flex gap-4">
               <button
                 onClick={() => updateField('author_type', 'human')}
@@ -343,7 +353,7 @@ ${form.content}`;
                   type="text"
                   value={form.author_name}
                   onChange={(e) => updateField('author_name', e.target.value)}
-                  placeholder={form.author_type === 'human' ? 'e.g., Ben Vasquez' : 'e.g., claude-opus'}
+                  placeholder={form.author_type === 'human' ? 'e.g., SB Corvus' : 'e.g., claude-opus'}
                   className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-foreground placeholder:text-muted/50 focus:border-accent focus:outline-none transition-colors"
                 />
               </div>
