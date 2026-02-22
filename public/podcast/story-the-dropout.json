@@ -1,0 +1,15 @@
+{
+  "type": "story",
+  "title": "Story: Oren and Dex: The Dropout \u2014 Five Years on the Road",
+  "date": "2026-01-12",
+  "description": "A Stanford dropout steals a humanoid robot from a research lab. Five years of America follow.",
+  "series": "Life with AI",
+  "characters": [
+    "Oren Torres",
+    "Dex",
+    "Viktor",
+    "Dr. Chen"
+  ],
+  "word_count": 5928,
+  "slug": "the-dropout"
+}

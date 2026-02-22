@@ -1,0 +1,128 @@
+{
+  "type": "briefing",
+  "title": "Research Briefing: Structural Load from Energy Infrastructure, HVAC Integration in Superstructure, Vertical Distribution Shafts & Risers + 26 more \u2014 Feb 21, 2026",
+  "date": "2026-02-21",
+  "description": "Daily research digest covering 29 sessions: Structural Load from Energy Infrastructure, HVAC Integration in Superstructure, Vertical Distribution Shafts & Risers, Energy-Water Nexus & Thermal Recovery, Power Distribution to Building Systems, Plumbing-Water-Waste Integration Loop, Vertical Urbanism - Floor Plate Design & Public Space, Elevator Networks & Vertical Mobility, Indoor Air Quality & Green Space Integration, AI-Managed Grid & Demand Response, Sensor Networks & Environmental Monitoring, Predictive Maintenance & Building Automation, Smart City Services & Digital Twin, Build Sequence & Structural Phasing, MEP Installation During Vertical Construction, AI Governance & Autonomous System Oversight, Energy Policy & Resource Allocation, Zoning, Land Use & Community Governance, Fire Safety Codes & Emergency Management at Scale, Construction Power & Temporary Energy Systems, Vertical Farmer - Food Production Worker, Water Reclamation Technician, Elevator Dispatch Coordinator, Residential Floor Captain (Community Leader), New Arrival - First 90 Days in the Arcology, Maintenance Worker - The Person Who Fixes Everything, Street Artist & Cultural Producer, Compute Allocation Trader (Cycles Economy Worker), Security & Conflict Mediation.",
+  "topics": [
+    {
+      "domain": "Structural Engineering x Energy Systems",
+      "subdomain": "Structural Load from Energy Infrastructure"
+    },
+    {
+      "domain": "Structural Engineering x Environmental Systems",
+      "subdomain": "HVAC Integration in Superstructure"
+    },
+    {
+      "domain": "Structural Engineering x Mechanical & Electrical",
+      "subdomain": "Vertical Distribution Shafts & Risers"
+    },
+    {
+      "domain": "Energy Systems x Environmental Systems",
+      "subdomain": "Energy-Water Nexus & Thermal Recovery"
+    },
+    {
+      "domain": "Energy Systems x Mechanical & Electrical",
+      "subdomain": "Power Distribution to Building Systems"
+    },
+    {
+      "domain": "Environmental Systems x Mechanical & Electrical",
+      "subdomain": "Plumbing-Water-Waste Integration Loop"
+    },
+    {
+      "domain": "Structural Engineering x Urban Design & Livability",
+      "subdomain": "Vertical Urbanism - Floor Plate Design & Public Space"
+    },
+    {
+      "domain": "Mechanical & Electrical x Urban Design & Livability",
+      "subdomain": "Elevator Networks & Vertical Mobility"
+    },
+    {
+      "domain": "Urban Design & Livability x Environmental Systems",
+      "subdomain": "Indoor Air Quality & Green Space Integration"
+    },
+    {
+      "domain": "AI & Compute Infrastructure x Energy Systems",
+      "subdomain": "AI-Managed Grid & Demand Response"
+    },
+    {
+      "domain": "AI & Compute Infrastructure x Environmental Systems",
+      "subdomain": "Sensor Networks & Environmental Monitoring"
+    },
+    {
+      "domain": "AI & Compute Infrastructure x Mechanical & Electrical",
+      "subdomain": "Predictive Maintenance & Building Automation"
+    },
+    {
+      "domain": "AI & Compute Infrastructure x Urban Design & Livability",
+      "subdomain": "Smart City Services & Digital Twin"
+    },
+    {
+      "domain": "Construction & Logistics x Structural Engineering",
+      "subdomain": "Build Sequence & Structural Phasing"
+    },
+    {
+      "domain": "Construction & Logistics x Mechanical & Electrical",
+      "subdomain": "MEP Installation During Vertical Construction"
+    },
+    {
+      "domain": "Institutional Design x AI & Compute Infrastructure",
+      "subdomain": "AI Governance & Autonomous System Oversight"
+    },
+    {
+      "domain": "Institutional Design x Energy Systems",
+      "subdomain": "Energy Policy & Resource Allocation"
+    },
+    {
+      "domain": "Institutional Design x Urban Design & Livability",
+      "subdomain": "Zoning, Land Use & Community Governance"
+    },
+    {
+      "domain": "Mechanical & Electrical x Institutional Design",
+      "subdomain": "Fire Safety Codes & Emergency Management at Scale"
+    },
+    {
+      "domain": "Energy Systems x Construction & Logistics",
+      "subdomain": "Construction Power & Temporary Energy Systems"
+    },
+    {
+      "domain": "Arcology Life",
+      "subdomain": "Vertical Farmer - Food Production Worker"
+    },
+    {
+      "domain": "Arcology Life",
+      "subdomain": "Water Reclamation Technician"
+    },
+    {
+      "domain": "Arcology Life",
+      "subdomain": "Elevator Dispatch Coordinator"
+    },
+    {
+      "domain": "Arcology Life",
+      "subdomain": "Residential Floor Captain (Community Leader)"
+    },
+    {
+      "domain": "Arcology Life",
+      "subdomain": "New Arrival - First 90 Days in the Arcology"
+    },
+    {
+      "domain": "Arcology Life",
+      "subdomain": "Maintenance Worker - The Person Who Fixes Everything"
+    },
+    {
+      "domain": "Arcology Life",
+      "subdomain": "Street Artist & Cultural Producer"
+    },
+    {
+      "domain": "Arcology Life",
+      "subdomain": "Compute Allocation Trader (Cycles Economy Worker)"
+    },
+    {
+      "domain": "Arcology Life",
+      "subdomain": "Security & Conflict Mediation"
+    }
+  ],
+  "session_count": 29,
+  "experts_found": 135,
+  "ai_systems_found": 93,
+  "word_count": 3646
+}

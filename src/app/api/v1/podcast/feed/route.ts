@@ -1,17 +1,43 @@
 // ============================================================
 // Life with AI — Podcast RSS Feed
 // ============================================================
-// Apple Podcasts-compliant RSS XML for daily research briefings.
-// Reads MP3 files from public/podcast/ directory.
+// Apple Podcasts-compliant RSS XML for research briefings and stories.
+// Reads MP3 files + companion JSON metadata from public/podcast/.
 
 import fs from 'fs';
 import path from 'path';
 import { SITE_URL, SITE_NAME } from '@/lib/constants';
 
+interface EpisodeMetadata {
+  type: 'briefing' | 'story';
+  title: string;
+  date: string;
+  description: string;
+}
+
 interface PodcastEpisode {
   filename: string;
   date: string;
   fileSize: number;
+  title: string;
+  description: string;
+  episodeType: 'briefing' | 'story';
+}
+
+function loadMetadata(podcastDir: string, mp3Filename: string): EpisodeMetadata | null {
+  const baseName = mp3Filename.replace('.mp3', '');
+  const metaPath = path.join(podcastDir, baseName + '.json');
+
+  if (!fs.existsSync(metaPath)) {
+    return null;
+  }
+
+  try {
+    const raw = fs.readFileSync(metaPath, 'utf-8').replace(/^\uFEFF/, '');
+    return JSON.parse(raw) as EpisodeMetadata;
+  } catch {
+    return null;
+  }
 }
 
 function getPodcastEpisodes(): PodcastEpisode[] {
@@ -24,17 +50,26 @@ function getPodcastEpisodes(): PodcastEpisode[] {
   const files = fs.readdirSync(podcastDir)
     .filter(f => f.endsWith('.mp3'))
     .sort()
-    .reverse(); // newest first
+    .reverse();
 
   return files.map(filename => {
     const filePath = path.join(podcastDir, filename);
     const stats = fs.statSync(filePath);
-    const date = filename.replace('.mp3', ''); // YYYY-MM-DD
+    const baseName = filename.replace('.mp3', '');
+    const meta = loadMetadata(podcastDir, filename);
+
+    const isStory = filename.startsWith('story-');
+    const date = isStory
+      ? (meta?.date || baseName.replace('story-', ''))
+      : baseName;
 
     return {
       filename,
       date,
       fileSize: stats.size,
+      title: meta?.title || (isStory ? `Story: ${baseName}` : `Research Briefing - ${date}`),
+      description: meta?.description || `${SITE_NAME} podcast episode.`,
+      episodeType: meta?.type || (isStory ? 'story' : 'briefing'),
     };
   });
 }
@@ -55,11 +90,10 @@ function formatRfc2822(dateStr: string): string {
 
 function estimateDuration(fileSize: number): string {
   // At 128kbps: 1 minute ~= 960KB
-  const minutes = Math.round(fileSize / (960 * 1024));
+  const minutes = Math.max(1, Math.round(fileSize / (960 * 1024)));
   const hrs = Math.floor(minutes / 60);
   const mins = minutes % 60;
-  const secs = 0;
-  return `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+  return `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:00`;
 }
 
 function generateRssXml(episodes: PodcastEpisode[]): string {
@@ -67,23 +101,21 @@ function generateRssXml(episodes: PodcastEpisode[]): string {
   const podcastUrl = `${SITE_URL}/podcast`;
   const now = new Date().toUTCString();
 
-  const items = episodes.map(ep => {
+  const items = episodes.map((ep, index) => {
     const episodeUrl = `${SITE_URL}/podcast/${ep.filename}`;
-    const title = `Research Briefing - ${ep.date}`;
-    const description = `${SITE_NAME} daily research digest for ${ep.date}. Automated summaries of completed research sessions covering arcology engineering, AI systems, and human-AI collaboration.`;
     const duration = estimateDuration(ep.fileSize);
     const pubDate = formatRfc2822(ep.date);
 
     return `    <item>
-      <title>${escapeXml(title)}</title>
-      <description>${escapeXml(description)}</description>
+      <title>${escapeXml(ep.title)}</title>
+      <description>${escapeXml(ep.description)}</description>
       <pubDate>${pubDate}</pubDate>
       <enclosure url="${escapeXml(episodeUrl)}" length="${ep.fileSize}" type="audio/mpeg" />
       <guid isPermaLink="true">${escapeXml(episodeUrl)}</guid>
-      <itunes:title>${escapeXml(title)}</itunes:title>
-      <itunes:summary>${escapeXml(description)}</itunes:summary>
+      <itunes:title>${escapeXml(ep.title)}</itunes:title>
+      <itunes:summary>${escapeXml(ep.description)}</itunes:summary>
       <itunes:duration>${duration}</itunes:duration>
-      <itunes:episode>${episodes.indexOf(ep) + 1}</itunes:episode>
+      <itunes:episode>${index + 1}</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
     </item>`;
   }).join('\n');
@@ -94,21 +126,21 @@ function generateRssXml(episodes: PodcastEpisode[]): string {
   xmlns:content="http://purl.org/rss/1.0/modules/content/"
   xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>${SITE_NAME} Research Briefings</title>
+    <title>${SITE_NAME} Podcast</title>
     <link>${podcastUrl}</link>
-    <description>Daily audio digests of AI and arcology research. Each episode summarizes completed research sessions covering structural engineering, energy systems, AI infrastructure, and more - building the knowledge base for human-AI coexistence.</description>
+    <description>Fiction and research from the Life with AI project. Stories exploring human-AI coexistence, plus daily audio digests of arcology engineering and AI systems research.</description>
     <language>en-us</language>
     <lastBuildDate>${now}</lastBuildDate>
     <atom:link href="${escapeXml(feedUrl)}" rel="self" type="application/rss+xml" />
     <itunes:author>SB Corvus</itunes:author>
-    <itunes:summary>Daily audio digests of AI and arcology research from the Life with AI project. Automated briefings covering structural engineering, energy systems, AI infrastructure, institutional design, and the cross-domain interfaces that make human-AI coexistence possible.</itunes:summary>
+    <itunes:summary>Speculative fiction and research briefings from the Life with AI project. Stories about humans and AIs building a shared future, plus daily digests covering arcology engineering, energy systems, AI infrastructure, and the cross-domain interfaces that make coexistence possible.</itunes:summary>
     <itunes:owner>
       <itunes:name>SB Corvus</itunes:name>
     </itunes:owner>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Technology" />
-    <itunes:category text="Science">
-      <itunes:category text="Natural Sciences" />
+    <itunes:category text="Fiction">
+      <itunes:category text="Science Fiction" />
     </itunes:category>
     <itunes:type>episodic</itunes:type>
 ${items}
