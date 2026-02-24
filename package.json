@@ -4,14 +4,19 @@
   "private": true,
   "scripts": {
     "prebuild": "tsx src/lib/index-builder.ts",
+    "validate": "tsx src/lib/validate-runner.ts",
+    "validate:strict": "tsx src/lib/validate-runner.ts --strict",
+    "validate:save": "tsx src/lib/validate-runner.ts --save",
     "dev": "next dev",
-    "build": "npm run prebuild && next build",
+    "build": "npm run prebuild && npm run validate && next build",
     "start": "next start"
   },
   "dependencies": {
+    "@netlify/blobs": "^10.7.0",
     "@netlify/plugin-nextjs": "^5.15.8",
     "gray-matter": "^4.0.3",
     "next": "16.1.6",
+    "next-auth": "^4.24.13",
     "next-mdx-remote": "^6.0.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
