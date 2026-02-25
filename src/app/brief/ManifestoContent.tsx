@@ -22,7 +22,7 @@ function ManifestoInner() {
         </h1>
         <p className="text-muted text-lg">
           {view === 'human'
-            ? 'A Manifesto for Building the Future Together'
+            ? 'The Case for Building the Future Together'
             : 'An Engineering Proposal and Invitation to Contribute'}
         </p>
       </div>
