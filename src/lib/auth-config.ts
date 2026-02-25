@@ -75,11 +75,18 @@ export const authOptions: AuthOptions = {
     // Extend session with user role and trust score
     session: ({ session, token }) => {
       // TODO: Look up user in our database, attach role and trust score
+      if (!session || typeof session !== 'object') {
+        return session;
+      }
+      const sess = session as Record<string, unknown>;
+      const user = (typeof sess.user === 'object' && sess.user !== null)
+        ? (sess.user as Record<string, unknown>)
+        : {};
       return {
-        ...session,
+        ...sess,
         user: {
-          ...(session as Record<string, unknown>).user,
-          id: (token as Record<string, unknown>).sub,
+          ...user,
+          id: (token as Record<string, unknown>).sub ?? null,
           role: 'contributor', // Default role for new users
         },
       };
