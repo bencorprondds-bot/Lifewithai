@@ -2,9 +2,8 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-# Install dependencies
-COPY pyproject.toml .
-RUN pip install --no-cache-dir .
+# Install dependencies directly (no wheel build needed)
+RUN pip install --no-cache-dir "fastmcp>=2.0.0" "httpx>=0.27.0" "pydantic>=2.0.0"
 
 # Copy application code
 COPY *.py .

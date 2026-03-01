@@ -1,0 +1,383 @@
+# Content Validation Report
+*Generated: 2026-02-26T14:37:15.811Z*
+*Entries validated: 31*
+
+## Status: ISSUES FOUND
+**67 error(s)**, 116 warning(s), 85 info note(s).
+
+## Summary
+
+| Check | Status |
+|-------|--------|
+| Cross-references | 142/146 valid (4 broken) |
+| Orphan entries | 4 orphans |
+| Citations | 73/199 valid |
+| Parameters | 364 total, 9 consistency issues |
+| Schema completeness | 31/31 entries complete |
+
+## KEDL Advancement Candidates
+- construction-logistics/phasing/construction-phasing
+
+## Orphan Entries
+- institutional-design/economics/economic-model
+- institutional-design/ai-rights/ai-rights-framework
+- institutional-design/security/security-architecture
+- construction-logistics/workforce/workforce-planning
+
+## Errors
+- **[citation]** `ai-compute-infrastructure/ai-governance/ai-governance-framework`: Citation "iso-42001-2023" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `ai-compute-infrastructure/ai-governance/ai-governance-framework`: Citation "eu-ai-act-2024" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `ai-compute-infrastructure/ai-governance/ai-governance-framework`: Citation "nist-ai-rmf-2023" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `ai-compute-infrastructure/ai-governance/ai-governance-framework`: Citation "owasp-asi08-2026" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `ai-compute-infrastructure/ai-governance/ai-governance-framework`: Citation "songdo-lessons-2025" has invalid type: "news"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `ai-compute-infrastructure/ai-governance/ai-governance-framework`: Citation "credo-ai-2025" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `institutional-design/economics/economic-model`: Citation "oecd-land-value-2022" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `institutional-design/economics/economic-model`: Citation "charter-cities-institute-2025" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `institutional-design/economics/economic-model`: Citation "urbansim-platform-2024" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `institutional-design/ai-rights/ai-rights-framework`: Citation "cyberjustice-ai-personhood-2026" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `institutional-design/security/security-architecture`: Citation "forescout-2025" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `institutional-design/security/security-architecture`: Citation "nozomi-niagara-2024" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `institutional-design/security/security-architecture`: Citation "neom-cybersecurity-2024" has invalid type: "news"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[cross-reference]** `construction-logistics/phasing/construction-phasing`: Invalid relationship type: "parallel"
+  - On reference to "construction-logistics/robotics/robotics-factory". Valid types: depends-on, informs, contradicts, extends, alternative-to
+- **[citation]** `construction-logistics/phasing/construction-phasing`: Citation "alice-technologies-2024" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `construction-logistics/phasing/construction-phasing`: Citation "bentley-synchro-2024" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `construction-logistics/phasing/construction-phasing`: Citation "oracle-p6-2026" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `construction-logistics/phasing/construction-phasing`: Citation "neom-line-2025" has invalid type: "news"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[cross-reference]** `construction-logistics/supply-chain/supply-chain-logistics`: Invalid relationship type: "parallel"
+  - On reference to "construction-logistics/robotics/robotics-factory". Valid types: depends-on, informs, contradicts, extends, alternative-to
+- **[citation]** `construction-logistics/supply-chain/supply-chain-logistics`: Citation "alice-technologies-2024" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `construction-logistics/supply-chain/supply-chain-logistics`: Citation "katerra-postmortem-2021" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `construction-logistics/supply-chain/supply-chain-logistics`: Citation "autonomous-trucking-2025" has invalid type: "news"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `construction-logistics/supply-chain/supply-chain-logistics`: Citation "rmi-cement-decarbonization-2024" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[cross-reference]** `construction-logistics/workforce/workforce-planning`: Invalid relationship type: "parallel"
+  - On reference to "construction-logistics/supply-chain/supply-chain-logistics". Valid types: depends-on, informs, contradicts, extends, alternative-to
+- **[cross-reference]** `construction-logistics/workforce/workforce-planning`: Invalid relationship type: "parallel"
+  - On reference to "construction-logistics/robotics/robotics-factory". Valid types: depends-on, informs, contradicts, extends, alternative-to
+- **[citation]** `construction-logistics/workforce/workforce-planning`: Citation "abc-workforce-2026" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `construction-logistics/workforce/workforce-planning`: Citation "neom-line-2025" has invalid type: "news"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `construction-logistics/workforce/workforce-planning`: Citation "alice-technologies-2024" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `construction-logistics/workforce/workforce-planning`: Citation "nccer-training-2025" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `construction-logistics/workforce/workforce-planning`: Citation "mckinsey-humanoid-robots-2024" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[cross-reference]** `urban-design-livability/public-space/public-space-design`: Invalid relationship type: "parallel"
+  - On reference to "environmental-systems/food-production/food-systems". Valid types: depends-on, informs, contradicts, extends, alternative-to
+- **[citation]** `urban-design-livability/public-space/public-space-design`: Citation "singapore-skyrise-handbook-2023" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `urban-design-livability/public-space/public-space-design`: Citation "coelux-artificial-sky-2023" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[cross-reference]** `urban-design-livability/transport/internal-transport`: Invalid relationship type: "parallel"
+  - On reference to "mechanical-electrical/fire-life-safety/fire-life-safety". Valid types: depends-on, informs, contradicts, extends, alternative-to
+- **[citation]** `urban-design-livability/transport/internal-transport`: Citation "shimizu-megacity-2004" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `energy-systems/nuclear-smr/nuclear-smr-baseload`: Citation "ieee-deep-fission-2025" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[cross-reference]** `energy-systems/solar/solar-integration`: Invalid relationship type: "parallel"
+  - On reference to "energy-systems/nuclear-smr/nuclear-smr-baseload". Valid types: depends-on, informs, contradicts, extends, alternative-to
+- **[citation]** `energy-systems/solar/solar-integration`: Citation "mitrex-bipv-specs-2025" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `energy-systems/solar/solar-integration`: Citation "fraunhofer-morphocolor-2024" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `energy-systems/district-energy/district-thermal`: Citation "iea-dh-2025" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[cross-reference]** `environmental-systems/hvac/atmospheric-control`: Invalid relationship type: "parallel"
+  - On reference to "environmental-systems/water/closed-loop-water". Valid types: depends-on, informs, contradicts, extends, alternative-to
+- **[citation]** `environmental-systems/hvac/atmospheric-control`: Citation "ashrae-co2-2024" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[cross-reference]** `environmental-systems/waste/waste-processing`: Invalid relationship type: "parallel"
+  - On reference to "environmental-systems/water/closed-loop-water". Valid types: depends-on, informs, contradicts, extends, alternative-to
+- **[cross-reference]** `environmental-systems/waste/waste-processing`: Invalid relationship type: "parallel"
+  - On reference to "environmental-systems/hvac/atmospheric-control". Valid types: depends-on, informs, contradicts, extends, alternative-to
+- **[citation]** `environmental-systems/waste/waste-processing`: Citation "amp-robotics-2025" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `environmental-systems/waste/waste-processing`: Citation "zenrobotics-sorting-2025" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[cross-reference]** `environmental-systems/food-production/food-systems`: Invalid relationship type: "parallel"
+  - On reference to "environmental-systems/waste/waste-processing". Valid types: depends-on, informs, contradicts, extends, alternative-to
+- **[cross-reference]** `environmental-systems/food-production/food-systems`: Invalid relationship type: "parallel"
+  - On reference to "environmental-systems/hvac/atmospheric-control". Valid types: depends-on, informs, contradicts, extends, alternative-to
+- **[cross-reference]** `mechanical-electrical/plumbing/plumbing-distribution`: Invalid relationship type: "parallel"
+  - On reference to "mechanical-electrical/elevators/vertical-transport". Valid types: depends-on, informs, contradicts, extends, alternative-to
+- **[citation]** `mechanical-electrical/plumbing/plumbing-distribution`: Citation "ashrae-tall-building-guide-2024" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `mechanical-electrical/plumbing/plumbing-distribution`: Citation "evac-vacuum-systems-2024" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[cross-reference]** `mechanical-electrical/electrical/electrical-distribution`: Invalid relationship type: "parallel"
+  - On reference to "mechanical-electrical/elevators/vertical-transport". Valid types: depends-on, informs, contradicts, extends, alternative-to
+- **[citation]** `mechanical-electrical/electrical/electrical-distribution`: Citation "siemens-high-rise-electrical-2023" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `mechanical-electrical/electrical/electrical-distribution`: Citation "eaton-busway-guide-2023" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `mechanical-electrical/fire-life-safety/fire-life-safety`: Citation "marioff-hifog-2024" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `ai-compute-infrastructure/network/network-backbone`: Citation "mckeown-sdn-2025" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `ai-compute-infrastructure/network/network-backbone`: Citation "marvell-teralynx-2025" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `ai-compute-infrastructure/network/network-backbone`: Citation "broadcom-tomahawk6-2025" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `ai-compute-infrastructure/network/network-backbone`: Citation "corning-fiber-backbone" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `ai-compute-infrastructure/network/network-backbone`: Citation "ruckus-wifi7-2025" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `ai-compute-infrastructure/edge-iot/edge-sensor-mesh`: Citation "gmi-edge-2025" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `ai-compute-infrastructure/edge-iot/edge-sensor-mesh`: Citation "siemens-desigo-2025" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `ai-compute-infrastructure/edge-iot/edge-sensor-mesh`: Citation "matter-standard-2026" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[cross-reference]** `structural-engineering/materials/materials-at-scale`: Invalid relationship type: "parallel"
+  - On reference to "construction-logistics/robotics/robotics-factory". Valid types: depends-on, informs, contradicts, extends, alternative-to
+- **[citation]** `structural-engineering/materials/materials-at-scale`: Citation "concretene-graphene-2021" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[citation]** `structural-engineering/materials/materials-at-scale`: Citation "bfrp-construction-2024" has invalid type: "industry"
+  - Valid types: peer-reviewed, standard, project-data, internal, expert-judgment
+- **[cross-reference]** `structural-engineering/foundation-systems/foundation-systems`: Invalid relationship type: "parallel"
+  - On reference to "environmental-systems/water/closed-loop-water". Valid types: depends-on, informs, contradicts, extends, alternative-to
+
+## Warnings
+- **[parameter]** `ai-compute-infrastructure/ai-governance/ai-governance-framework`: Parameter "engineering_domains" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `ai-compute-infrastructure/ai-governance/ai-governance-framework`: Parameter "subdomains" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `ai-compute-infrastructure/ai-governance/ai-governance-framework`: Parameter "safety_decision_latency" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `ai-compute-infrastructure/ai-governance/ai-governance-framework`: Parameter "eu_ai_act_penalty_max" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `institutional-design/economics/economic-model`: Parameter "agglomeration_premium" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `institutional-design/economics/economic-model`: Parameter "megaproject_overrun_rate" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `institutional-design/ai-rights/ai-rights-framework`: Parameter "consciousness_indicators_framework" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `institutional-design/security/security-architecture`: Parameter "bms_vulnerability_rate_industry" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `construction-logistics/phasing/construction-phasing`: Parameter "max_concrete_pump_height_m" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `construction-logistics/phasing/construction-phasing`: Parameter "arcology_height_m" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `construction-logistics/phasing/construction-phasing`: Parameter "pump_coverage_ratio" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `construction-logistics/phasing/construction-phasing`: Parameter "peak_construction_rate_floors_per_month" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `construction-logistics/phasing/construction-phasing`: Parameter "mega_project_overrun_rate" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `construction-logistics/phasing/construction-phasing`: Parameter "modular_height_limit_stories" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `construction-logistics/phasing/construction-phasing`: Parameter "burj_khalifa_duration_years" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `construction-logistics/supply-chain/supply-chain-logistics`: Parameter "neom_supply_chain_investment" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `construction-logistics/supply-chain/supply-chain-logistics`: Parameter "max_concrete_pump_height_m" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `construction-logistics/supply-chain/supply-chain-logistics`: Parameter "alice_scheduling_capacity" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `construction-logistics/supply-chain/supply-chain-logistics`: Parameter "mega_project_overrun_rate" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `construction-logistics/supply-chain/supply-chain-logistics`: Parameter "modular_market_cagr" confidence (3) exceeds entry confidence (2)
+- **[cross-reference]** `construction-logistics/workforce/workforce-planning`: Broken cross-reference: "urban-design-livability/residential/residential-design" does not exist
+  - Referenced from construction-logistics/workforce/workforce-planning with relationship "informs"
+- **[cross-reference]** `construction-logistics/workforce/workforce-planning`: Broken cross-reference: "urban-design-livability/healthcare-education/healthcare-education" does not exist
+  - Referenced from construction-logistics/workforce/workforce-planning with relationship "informs"
+- **[parameter]** `construction-logistics/workforce/workforce-planning`: Parameter "largest_single_project_workforce" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `construction-logistics/workforce/workforce-planning`: Parameter "us_construction_annual_deficit" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `construction-logistics/workforce/workforce-planning`: Parameter "apprenticeship_completion_rate" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `construction-logistics/workforce/workforce-planning`: Parameter "journey_certification_years" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `construction-logistics/workforce/workforce-planning`: Parameter "construction_fatality_rate" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `urban-design-livability/public-space/public-space-design`: Parameter "green_space_per_capita_target" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `urban-design-livability/public-space/public-space-design`: Parameter "largest_existing_sky_garden" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `urban-design-livability/public-space/public-space-design`: Parameter "largest_climate_controlled_interior" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `urban-design-livability/public-space/public-space-design`: Parameter "bosco_verticale_trees" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `urban-design-livability/public-space/public-space-design`: Parameter "soil_weight" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `urban-design-livability/transport/internal-transport`: Parameter "max_elevator_speed" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `urban-design-livability/transport/internal-transport`: Parameter "moving_walkway_speed_standard" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `urban-design-livability/transport/internal-transport`: Parameter "la_paz_gondola_annual_ridership" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `urban-design-livability/transport/internal-transport`: Parameter "wvu_prt_years_operational" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `urban-design-livability/transport/internal-transport`: Parameter "burj_khalifa_elevators" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `structural-engineering/seismic-design/seismic-resilience`: Parameter "tallest_seismic_designed_m" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `structural-engineering/seismic-design/seismic-resilience`: Parameter "largest_tmd_mass_tonnes" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `structural-engineering/seismic-design/seismic-resilience`: Parameter "torre_mayor_damper_count" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `structural-engineering/seismic-design/seismic-resilience`: Parameter "japan_base_isolated_buildings" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `energy-systems/nuclear-smr/nuclear-smr-baseload`: Parameter "nuscale_module_capacity_mw" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `energy-systems/nuclear-smr/nuclear-smr-baseload`: Parameter "bwrx300_capacity_mw" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `energy-systems/nuclear-smr/nuclear-smr-baseload`: Parameter "voygr12_plant_capacity_mw" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `energy-systems/nuclear-smr/nuclear-smr-baseload`: Parameter "xe100_outlet_temp_c" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `energy-systems/nuclear-smr/nuclear-smr-baseload`: Parameter "nuscale_refueling_months" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `energy-systems/solar/solar-integration`: Parameter "burleson_ghi_kwh_m2_year" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `energy-systems/solar/solar-integration`: Parameter "silicon_module_efficiency_pct" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `energy-systems/solar/solar-integration`: Parameter "tandem_lab_efficiency_pct" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `energy-systems/solar/solar-integration`: Parameter "tandem_module_efficiency_pct" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `energy-systems/solar/solar-integration`: Parameter "transparent_pv_efficiency_pct" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `energy-systems/solar/solar-integration`: Parameter "largest_bipv_project_m2" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `energy-systems/district-energy/district-thermal`: Parameter "population_served" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `energy-systems/district-energy/district-thermal`: Parameter "vertical_distribution_height_m" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `energy-systems/district-energy/district-thermal`: Parameter "hydrostatic_pressure_base_bar" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `energy-systems/district-energy/district-thermal`: Parameter "copenhagen_peak_mw" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `energy-systems/district-energy/district-thermal`: Parameter "empower_peak_mw" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `environmental-systems/hvac/atmospheric-control`: Parameter "population" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `environmental-systems/hvac/atmospheric-control`: Parameter "structure_height_m" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `environmental-systems/hvac/atmospheric-control`: Parameter "target_co2_ppm" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `environmental-systems/hvac/atmospheric-control`: Parameter "burj_khalifa_height_m" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `environmental-systems/hvac/atmospheric-control`: Parameter "burj_khalifa_cooling_tons" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `environmental-systems/waste/waste-processing`: Parameter "population" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `environmental-systems/waste/waste-processing`: Parameter "songdo_pneumatic_capacity_tons_day" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `environmental-systems/waste/waste-processing`: Parameter "pneumatic_pipe_diameter_mm" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `environmental-systems/waste/waste-processing`: Parameter "pneumatic_velocity_kmh" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `environmental-systems/waste/waste-processing`: Parameter "robotic_sorting_picks_minute" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `environmental-systems/waste/waste-processing`: Parameter "sorting_accuracy_percent" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `environmental-systems/waste/waste-processing`: Parameter "structure_height_m" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `environmental-systems/food-production/food-systems`: Parameter "population" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `mechanical-electrical/plumbing/plumbing-distribution`: Parameter "max_hydrostatic_pressure_psi" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `mechanical-electrical/plumbing/plumbing-distribution`: Parameter "vacuum_flush_volume_L" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `mechanical-electrical/plumbing/plumbing-distribution`: Parameter "conventional_flush_volume_L" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `mechanical-electrical/plumbing/plumbing-distribution`: Parameter "burj_khalifa_pipe_length_km" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `mechanical-electrical/plumbing/plumbing-distribution`: Parameter "burj_khalifa_daily_water_L" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `mechanical-electrical/electrical/electrical-distribution`: Parameter "voltage_drop_limit_total_pct" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `mechanical-electrical/electrical/electrical-distribution`: Parameter "burj_khalifa_height_m" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `mechanical-electrical/electrical/electrical-distribution`: Parameter "burj_khalifa_transformer_count" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `mechanical-electrical/fire-life-safety/fire-life-safety`: Parameter "water_column_pressure_psi" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `mechanical-electrical/fire-life-safety/fire-life-safety`: Parameter "water_mist_pressure_bar" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `ai-compute-infrastructure/network/network-backbone`: Parameter "building_height_ft" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `ai-compute-infrastructure/network/network-backbone`: Parameter "population" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `ai-compute-infrastructure/network/network-backbone`: Parameter "current_switch_throughput_tbps" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `ai-compute-infrastructure/network/network-backbone`: Parameter "fiber_backbone_speed_gbps" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `ai-compute-infrastructure/network/network-backbone`: Parameter "single_mode_fiber_max_ft" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `ai-compute-infrastructure/network/network-backbone`: Parameter "vertical_latency_us" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `ai-compute-infrastructure/edge-iot/edge-sensor-mesh`: Parameter "safety_latency_target" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `ai-compute-infrastructure/edge-iot/edge-sensor-mesh`: Parameter "largest_precedent_scale" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `structural-engineering/materials/materials-at-scale`: Parameter "uhpc_compressive_strength_mpa" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `structural-engineering/materials/materials-at-scale`: Parameter "hsc_compressive_strength_mpa" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `structural-engineering/materials/materials-at-scale`: Parameter "concrete_pump_height_record_m" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `structural-engineering/materials/materials-at-scale`: Parameter "steel_yield_s690_mpa" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `structural-engineering/materials/materials-at-scale`: Parameter "steel_yield_s960_mpa" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `structural-engineering/materials/materials-at-scale`: Parameter "cfrp_tensile_strength_mpa" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `structural-engineering/materials/materials-at-scale`: Parameter "etfe_weight_kg_sqm" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `structural-engineering/foundation-systems/foundation-systems`: Parameter "foundation_footprint_sqkm" confidence (2) exceeds entry confidence (1)
+- **[parameter]** `structural-engineering/foundation-systems/foundation-systems`: Parameter "surface_bearing_capacity_kpa" confidence (2) exceeds entry confidence (1)
+- **[parameter]** `structural-engineering/foundation-systems/foundation-systems`: Parameter "max_pile_depth_current_m" confidence (3) exceeds entry confidence (1)
+- **[parameter]** `structural-engineering/foundation-systems/foundation-systems`: Parameter "largest_raft_current_sqm" confidence (3) exceeds entry confidence (1)
+- **[parameter]** `structural-engineering/foundation-systems/foundation-systems`: Parameter "max_pile_working_load_mn" confidence (3) exceeds entry confidence (1)
+- **[parameter]** `structural-engineering/foundation-systems/foundation-systems`: Parameter "historical_subsidence_max_m" confidence (3) exceeds entry confidence (1)
+- **[parameter]** `structural-engineering/foundation-systems/foundation-systems`: Parameter "subsidence_rate_recent_cm_yr" confidence (2) exceeds entry confidence (1)
+- **[parameter]** `structural-engineering/foundation-systems/foundation-systems`: Parameter "max_concrete_pour_current_m3" confidence (3) exceeds entry confidence (1)
+- **[parameter]** `structural-engineering/foundation-systems/foundation-systems`: Parameter "stiff_clay_depth_m" confidence (2) exceeds entry confidence (1)
+- **[cross-reference]** `energy-systems/grid-architecture/power-budget`: Broken cross-reference: "environmental-systems/hvac/hvac-overview" does not exist
+  - Referenced from energy-systems/grid-architecture/power-budget with relationship "informs"
+- **[cross-reference]** `ai-compute-infrastructure/data-centers/compute-overview`: Broken cross-reference: "institutional-design/economics/cycles-economy" does not exist
+  - Referenced from ai-compute-infrastructure/data-centers/compute-overview with relationship "informs"
+- **[parameter]** `ai-compute-infrastructure/data-centers/compute-overview`: Parameter "gpus_per_rack" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `ai-compute-infrastructure/data-centers/compute-overview`: Parameter "inference_per_rack_eflops" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `ai-compute-infrastructure/data-centers/compute-overview`: Parameter "training_per_rack_eflops" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `ai-compute-infrastructure/data-centers/compute-overview`: Parameter "hbm4_per_rack_tb" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `ai-compute-infrastructure/data-centers/compute-overview`: Parameter "system_memory_per_rack_tb" confidence (3) exceeds entry confidence (2)
+- **[parameter]** `ai-compute-infrastructure/data-centers/compute-overview`: Parameter "power_per_rack_kw" confidence (3) exceeds entry confidence (2)
+- **[orphan]** `institutional-design/economics/economic-model`: Orphan entry — no other entries reference this one
+  - Consider adding cross-references from related entries to integrate this into the knowledge graph
+- **[orphan]** `institutional-design/ai-rights/ai-rights-framework`: Orphan entry — no other entries reference this one
+  - Consider adding cross-references from related entries to integrate this into the knowledge graph
+- **[orphan]** `institutional-design/security/security-architecture`: Orphan entry — no other entries reference this one
+  - Consider adding cross-references from related entries to integrate this into the knowledge graph
+- **[orphan]** `construction-logistics/workforce/workforce-planning`: Orphan entry — no other entries reference this one
+  - Consider adding cross-references from related entries to integrate this into the knowledge graph
+
+## Info
+- **[citation]** `ai-compute-infrastructure/ai-governance/ai-governance-framework`: Peer-reviewed citation "cugurullo-ai-urbanism-2023" has no URL — consider adding for verification
+- **[citation]** `institutional-design/economics/economic-model`: Peer-reviewed citation "duranton-puga-density-2020" has no URL — consider adding for verification
+- **[citation]** `institutional-design/economics/economic-model`: Peer-reviewed citation "flyvbjerg-megaprojects-2014" has no URL — consider adding for verification
+- **[citation]** `institutional-design/ai-rights/ai-rights-framework`: Peer-reviewed citation "butlin-consciousness-indicators-2023" has no URL — consider adding for verification
+- **[citation]** `institutional-design/ai-rights/ai-rights-framework`: Peer-reviewed citation "schwitzgebel-ai-consciousness-2025" has no URL — consider adding for verification
+- **[citation]** `institutional-design/ai-rights/ai-rights-framework`: Peer-reviewed citation "birch-sentience-review-2021" has no URL — consider adding for verification
+- **[citation]** `institutional-design/security/security-architecture`: Peer-reviewed citation "nist-elevator-evac-2013" has no URL — consider adding for verification
+- **[citation]** `institutional-design/security/security-architecture`: Peer-reviewed citation "chester-resilience-2026" has no URL — consider adding for verification
+- **[citation]** `institutional-design/security/security-architecture`: Peer-reviewed citation "simoes-bacs-security-2021" has no URL — consider adding for verification
+- **[citation]** `institutional-design/security/security-architecture`: Peer-reviewed citation "cpted-atlas-2023" has no URL — consider adding for verification
+- **[citation]** `construction-logistics/phasing/construction-phasing`: Peer-reviewed citation "flyvbjerg-megaprojects-2017" has no URL — consider adding for verification
+- **[citation]** `construction-logistics/phasing/construction-phasing`: Peer-reviewed citation "lean-construction-lps" has no URL — consider adding for verification
+- **[citation]** `construction-logistics/supply-chain/supply-chain-logistics`: Peer-reviewed citation "flyvbjerg-megaprojects-2017" has no URL — consider adding for verification
+- **[citation]** `construction-logistics/supply-chain/supply-chain-logistics`: Peer-reviewed citation "lean-construction-lps" has no URL — consider adding for verification
+- **[citation]** `construction-logistics/supply-chain/supply-chain-logistics`: Peer-reviewed citation "digital-twin-supply-chain-2024" has no URL — consider adding for verification
+- **[citation]** `construction-logistics/workforce/workforce-planning`: Peer-reviewed citation "bls-construction-productivity" has no URL — consider adding for verification
+- **[citation]** `urban-design-livability/public-space/public-space-design`: Peer-reviewed citation "biosensor-sky-gardens-2024" has no URL — consider adding for verification
+- **[citation]** `urban-design-livability/public-space/public-space-design`: Peer-reviewed citation "sky-gardens-asia-2022" has no URL — consider adding for verification
+- **[citation]** `urban-design-livability/public-space/public-space-design`: Peer-reviewed citation "hong-kong-elevated-2020" has no URL — consider adding for verification
+- **[citation]** `urban-design-livability/transport/internal-transport`: Peer-reviewed citation "sciencedirect-vertical-transport-2024" has no URL — consider adding for verification
+- **[citation]** `urban-design-livability/transport/internal-transport`: Peer-reviewed citation "ctbuh-ropeless-2023" has no URL — consider adding for verification
+- **[citation]** `urban-design-livability/transport/internal-transport`: Peer-reviewed citation "accelerating-walkways-2008" has no URL — consider adding for verification
+- **[citation]** `structural-engineering/seismic-design/seismic-resilience`: Peer-reviewed citation "peer-tbi-2017" has no URL — consider adding for verification
+- **[citation]** `structural-engineering/seismic-design/seismic-resilience`: Peer-reviewed citation "ctbuh-seismic-supertall" has no URL — consider adding for verification
+- **[citation]** `structural-engineering/seismic-design/seismic-resilience`: Peer-reviewed citation "nature-triple-isolation-2023" has no URL — consider adding for verification
+- **[citation]** `structural-engineering/seismic-design/seismic-resilience`: Peer-reviewed citation "japan-seismic-control-2019" has no URL — consider adding for verification
+- **[citation]** `structural-engineering/seismic-design/seismic-resilience`: Peer-reviewed citation "ssi-review-2023" has no URL — consider adding for verification
+- **[citation]** `structural-engineering/seismic-design/seismic-resilience`: Peer-reviewed citation "burj-khalifa-structural-2014" has no URL — consider adding for verification
+- **[citation]** `structural-engineering/seismic-design/seismic-resilience`: Peer-reviewed citation "ml-earthquake-engineering-2025" has no URL — consider adding for verification
+- **[citation]** `energy-systems/nuclear-smr/nuclear-smr-baseload`: Peer-reviewed citation "nrc-epz-framework-2023" has no URL — consider adding for verification
+- **[citation]** `energy-systems/nuclear-smr/nuclear-smr-baseload`: Peer-reviewed citation "stanford-smr-waste-2022" has no URL — consider adding for verification
+- **[citation]** `energy-systems/nuclear-smr/nuclear-smr-baseload`: Peer-reviewed citation "argonne-smr-waste-2023" has no URL — consider adding for verification
+- **[citation]** `energy-systems/solar/solar-integration`: Peer-reviewed citation "longi-tandem-record-2025" has no URL — consider adding for verification
+- **[citation]** `energy-systems/solar/solar-integration`: Peer-reviewed citation "nrel-degradation-study-2012" has no URL — consider adding for verification
+- **[citation]** `energy-systems/district-energy/district-thermal`: Peer-reviewed citation "lund-4gdh-2024" has no URL — consider adding for verification
+- **[citation]** `energy-systems/district-energy/district-thermal`: Peer-reviewed citation "wirtz-5gdhc-survey-2024" has no URL — consider adding for verification
+- **[citation]** `environmental-systems/hvac/atmospheric-control`: Peer-reviewed citation "ashrae-tall-buildings-2024" has no URL — consider adding for verification
+- **[citation]** `environmental-systems/hvac/atmospheric-control`: Peer-reviewed citation "ctbuh-stack-effect-2022" has no URL — consider adding for verification
+- **[citation]** `environmental-systems/hvac/atmospheric-control`: Peer-reviewed citation "harvard-iaq-2023" has no URL — consider adding for verification
+- **[citation]** `environmental-systems/waste/waste-processing`: Peer-reviewed citation "mdpi-pneumatic-2023" has no URL — consider adding for verification
+- **[citation]** `environmental-systems/waste/waste-processing`: Peer-reviewed citation "nature-cities-waste-scaling-2023" has no URL — consider adding for verification
+- **[citation]** `environmental-systems/waste/waste-processing`: Peer-reviewed citation "plasma-gasification-lca-2025" has no URL — consider adding for verification
+- **[citation]** `environmental-systems/food-production/food-systems`: Peer-reviewed citation "asseng-wheat-pnas-2020" has no URL — consider adding for verification
+- **[citation]** `environmental-systems/food-production/food-systems`: Peer-reviewed citation "vertical-farming-review-2025" has no URL — consider adding for verification
+- **[citation]** `environmental-systems/food-production/food-systems`: Peer-reviewed citation "cultivated-meat-scaling-2025" has no URL — consider adding for verification
+- **[citation]** `environmental-systems/food-production/food-systems`: Peer-reviewed citation "precision-fermentation-2025" has no URL — consider adding for verification
+- **[citation]** `environmental-systems/food-production/food-systems`: Peer-reviewed citation "insect-protein-food-security-2024" has no URL — consider adding for verification
+- **[citation]** `mechanical-electrical/plumbing/plumbing-distribution`: Peer-reviewed citation "cibse-tm70-2025" has no URL — consider adding for verification
+- **[citation]** `mechanical-electrical/plumbing/plumbing-distribution`: Peer-reviewed citation "gormley-drainage-2021" has no URL — consider adding for verification
+- **[citation]** `mechanical-electrical/electrical/electrical-distribution`: Peer-reviewed citation "freedm-sst-2024" has no URL — consider adding for verification
+- **[citation]** `mechanical-electrical/electrical/electrical-distribution`: Peer-reviewed citation "lbnl-dc-distribution-2024" has no URL — consider adding for verification
+- **[citation]** `mechanical-electrical/fire-life-safety/fire-life-safety`: Peer-reviewed citation "nist-elevator-evac-2013" has no URL — consider adding for verification
+- **[citation]** `mechanical-electrical/fire-life-safety/fire-life-safety`: Peer-reviewed citation "nist-fds-2024" has no URL — consider adding for verification
+- **[citation]** `mechanical-electrical/fire-life-safety/fire-life-safety`: Peer-reviewed citation "chow-supertall-2018" has no URL — consider adding for verification
+- **[citation]** `mechanical-electrical/fire-life-safety/fire-life-safety`: Peer-reviewed citation "evac-lifts-review-2025" has no URL — consider adding for verification
+- **[citation]** `structural-engineering/materials/materials-at-scale`: Peer-reviewed citation "uhpc-review-2022" has no URL — consider adding for verification
+- **[citation]** `structural-engineering/materials/materials-at-scale`: Peer-reviewed citation "uhpfrc-review-2025" has no URL — consider adding for verification
+- **[citation]** `structural-engineering/materials/materials-at-scale`: Peer-reviewed citation "li-ecc-monograph" has no URL — consider adding for verification
+- **[citation]** `structural-engineering/materials/materials-at-scale`: Peer-reviewed citation "reshealience-self-healing-2023" has no URL — consider adding for verification
+- **[citation]** `structural-engineering/materials/materials-at-scale`: Peer-reviewed citation "polyu-hss-welding-2022" has no URL — consider adding for verification
+- **[citation]** `structural-engineering/materials/materials-at-scale`: Peer-reviewed citation "ai-concrete-design-2025" has no URL — consider adding for verification
+- **[citation]** `structural-engineering/foundation-systems/foundation-systems`: Peer-reviewed citation "poulos-bunce-2008" has no URL — consider adding for verification
+- **[citation]** `structural-engineering/foundation-systems/foundation-systems`: Peer-reviewed citation "jeddah-tower-piled-raft-2014" has no URL — consider adding for verification
+- **[citation]** `structural-engineering/foundation-systems/foundation-systems`: Peer-reviewed citation "shanghai-tower-foundation-2012" has no URL — consider adding for verification
+- **[citation]** `structural-engineering/foundation-systems/foundation-systems`: Peer-reviewed citation "pmc-houston-subsidence-2024" has no URL — consider adding for verification
+- **[citation]** `structural-engineering/foundation-systems/foundation-systems`: Peer-reviewed citation "sciencedirect-large-pile-groups-2022" has no URL — consider adding for verification
+- **[citation]** `structural-engineering/superstructure/primary-geometry`: Peer-reviewed citation "ctbuh-tall-2023" has no URL — consider adding for verification
+- **[citation]** `energy-systems/grid-architecture/power-budget`: Peer-reviewed citation "vogtle-lessons-2024" has no URL — consider adding for verification
+- **[citation]** `mechanical-electrical/elevators/vertical-transport`: Peer-reviewed citation "ctbuh-vertical-transport-2023" has no URL — consider adding for verification
+- **[citation]** `ai-compute-infrastructure/data-centers/compute-overview`: Peer-reviewed citation "epoch-compute-2025" has no URL — consider adding for verification
+- **[citation]** `institutional-design/governance/binding-hierarchy`: Peer-reviewed citation "floridi-ai-governance-2023" has no URL — consider adding for verification
+- **[citation]** `institutional-design/governance/binding-hierarchy`: Peer-reviewed citation "dafoe-cooperative-ai-2024" has no URL — consider adding for verification
+- **[citation]** `construction-logistics/robotics/robotics-factory`: Peer-reviewed citation "mckinsey-construction-2023" has no URL — consider adding for verification
+- **[citation]** `construction-logistics/robotics/robotics-factory`: Peer-reviewed citation "iea-construction-cost-2024" has no URL — consider adding for verification
+- **[citation]** `urban-design-livability/residential/space-allocation`: Peer-reviewed citation "un-habitat-density-2024" has no URL — consider adding for verification
+- **[parameter-consistency]** `institutional-design/security/security-architecture`: Parameter "population" appears with different units: permanent residents, people, residents
+  - This may be intentional (e.g., metric/imperial) or a data entry inconsistency
+- **[parameter-consistency]** `institutional-design/security/security-architecture`: Parameter "building_height_m" appears with different units: meters (5,000 feet), meters
+  - This may be intentional (e.g., metric/imperial) or a data entry inconsistency
+- **[parameter-consistency]** `construction-logistics/phasing/construction-phasing`: Parameter "concurrent_work_fronts" appears with different units: zones (range: hundreds to thousands), zones (range: 500-2,000)
+  - This may be intentional (e.g., metric/imperial) or a data entry inconsistency
+- **[parameter-consistency]** `construction-logistics/phasing/construction-phasing`: Parameter "mega_project_overrun_rate" appears with different units: percent average (dams and rail), fraction of megaprojects exceeding budget or schedule
+  - This may be intentional (e.g., metric/imperial) or a data entry inconsistency
+- **[parameter-consistency]** `urban-design-livability/transport/internal-transport`: Parameter "base_footprint_miles" appears with different units: miles diameter, miles per side
+  - This may be intentional (e.g., metric/imperial) or a data entry inconsistency
+- **[parameter-consistency]** `energy-systems/district-energy/district-thermal`: Parameter "pressure_zones_required" appears with different units: zones (at 25 bar each), zones (estimated), zones (range: 15-20)
+  - This may be intentional (e.g., metric/imperial) or a data entry inconsistency
+- **[parameter-consistency]** `energy-systems/district-energy/district-thermal`: Parameter "pipe_network_length_km" appears with different units: km (midpoint estimate), km (range: 5,000-10,000)
+  - This may be intentional (e.g., metric/imperial) or a data entry inconsistency
+- **[parameter-consistency]** `environmental-systems/hvac/atmospheric-control`: Parameter "stack_effect_pressure_pa" appears with different units: pa (extreme conditions), pa (full height, 20°c differential)
+  - This may be intentional (e.g., metric/imperial) or a data entry inconsistency
+- **[parameter-consistency]** `environmental-systems/hvac/atmospheric-control`: Parameter "burj_khalifa_height_m" appears with different units: meters (reference), meters
+  - This may be intentional (e.g., metric/imperial) or a data entry inconsistency
+- **[kedl]** `construction-logistics/phasing/construction-phasing`: KEDL 200 entry may be ready to advance to 300 — has methodology, 3+ citations, and 50%+ parameters at CL3+

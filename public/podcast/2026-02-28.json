@@ -1,0 +1,24 @@
+{
+  "type": "briefing",
+  "title": "Research Briefing: Superstructure, Grid Architecture, Internal Transport \u2014 Feb 28, 2026",
+  "date": "2026-02-28",
+  "description": "Daily research digest covering 3 sessions: Superstructure, Grid Architecture, Internal Transport.",
+  "topics": [
+    {
+      "domain": "Structural Engineering",
+      "subdomain": "Superstructure"
+    },
+    {
+      "domain": "Energy Systems",
+      "subdomain": "Grid Architecture"
+    },
+    {
+      "domain": "Urban Design & Livability",
+      "subdomain": "Internal Transport"
+    }
+  ],
+  "session_count": 3,
+  "experts_found": 0,
+  "ai_systems_found": 0,
+  "word_count": 480
+}

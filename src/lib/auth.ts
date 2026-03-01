@@ -4,12 +4,9 @@
 // Handles:
 //   - Session validation (OAuth users)
 //   - API key validation (registered agents)
-//   - Rate limiting (per-account and per-key)
+//   - Rate limiting (per-account and per-key, persisted via Blobs)
 //   - Submission provenance creation
-//
-// IMPORTANT: This is a SKELETON. It uses file-based storage
-// as a transitional step. When the platform scales, replace
-// the JSON file reads with a proper database (SQLite/Postgres).
+//   - Trust score computation from proposal history
 //
 // To activate OAuth:
 //   1. Create GitHub OAuth App: https://github.com/settings/developers
@@ -30,6 +27,9 @@ import type {
   TrustScore,
 } from './auth-types';
 import { API_KEY_PREFIX, DEFAULT_TRUST_SCORE, DEFAULT_RATE_LIMITS } from './auth-types';
+import { getJSON, setJSON } from './storage';
+
+const RATE_LIMIT_STORE = 'rate-limits';
 
 // --- API Key Utilities ---
 
@@ -104,8 +104,6 @@ export function authenticateRequest(
   }
 
   // 2. Check for session cookie (placeholder — will be replaced by NextAuth.js)
-  // In the real implementation, this calls getServerSession(authOptions)
-  // For now, we return anonymous if no API key
   const sessionToken = request.cookies.get('next-auth.session-token')?.value;
   if (sessionToken) {
     // TODO: Validate session token via NextAuth.js
@@ -117,28 +115,36 @@ export function authenticateRequest(
   return { type: 'anonymous' };
 }
 
-// --- Rate Limiting ---
+// --- Rate Limiting (persisted via Blobs) ---
 
-// In-memory rate limit tracking (resets on server restart)
-// For production, use Redis or a database
-const rateLimitStore = new Map<string, { count: number; window_start: number }>();
+interface RateLimitRecord {
+  count: number;
+  window_start: number;
+}
 
-export function checkRateLimit(
-  identifier: string,  // user ID or API key prefix
+/**
+ * Check and update rate limits for an identifier.
+ * Uses Netlify Blobs in production, in-memory in dev.
+ * Keyed by identifier + hour bucket for automatic window rotation.
+ */
+export async function checkRateLimit(
+  identifier: string,
   limits: RateLimit
-): { allowed: boolean; remaining: number; reset_at: number } {
+): Promise<{ allowed: boolean; remaining: number; reset_at: number }> {
   const now = Date.now();
   const hourMs = 60 * 60 * 1000;
-  const key = `hourly:${identifier}`;
+  const hourBucket = Math.floor(now / hourMs);
+  const key = `${identifier}:${hourBucket}`;
 
-  const existing = rateLimitStore.get(key);
-  if (!existing || (now - existing.window_start) > hourMs) {
-    // New window
-    rateLimitStore.set(key, { count: 1, window_start: now });
+  const existing = await getJSON<RateLimitRecord>(RATE_LIMIT_STORE, key);
+
+  if (!existing) {
+    // New window — first request
+    await setJSON(RATE_LIMIT_STORE, key, { count: 1, window_start: now });
     return {
       allowed: true,
       remaining: limits.requests_per_hour - 1,
-      reset_at: now + hourMs,
+      reset_at: (hourBucket + 1) * hourMs,
     };
   }
 
@@ -146,15 +152,18 @@ export function checkRateLimit(
     return {
       allowed: false,
       remaining: 0,
-      reset_at: existing.window_start + hourMs,
+      reset_at: (hourBucket + 1) * hourMs,
     };
   }
 
+  // Increment
   existing.count++;
+  await setJSON(RATE_LIMIT_STORE, key, existing);
+
   return {
     allowed: true,
     remaining: limits.requests_per_hour - existing.count,
-    reset_at: existing.window_start + hourMs,
+    reset_at: (hourBucket + 1) * hourMs,
   };
 }
 
@@ -188,25 +197,86 @@ export function hashIP(ip: string, salt: string): string {
 }
 
 // --- Trust Score Computation ---
-// Placeholder — will be computed from submission history
 
-export function computeTrustScore(
-  totalSubmissions: number,
-  totalAccepted: number,
-  // Additional metrics would come from the review database
-): TrustScore {
-  if (totalSubmissions === 0) return DEFAULT_TRUST_SCORE;
+interface ProposalSummary {
+  status: string;
+  kedl?: number;
+  confidence?: number;
+}
 
-  const acceptanceRate = totalAccepted / totalSubmissions;
+/**
+ * Compute trust score from an agent's proposal history.
+ * Uses actual proposal outcomes, not placeholders.
+ *
+ * Metrics:
+ *   - acceptance_rate: % of proposals accepted
+ *   - confidence_calibration: how well predicted confidence matches outcomes
+ *     (agents that self-assess accurately score higher)
+ *   - consistency_score: based on proposal quality signals
+ *   - overall: weighted composite (acceptance 50%, calibration 25%, consistency 25%)
+ */
+export function computeTrustScore(proposals: ProposalSummary[]): TrustScore {
+  if (proposals.length === 0) return DEFAULT_TRUST_SCORE;
+
+  // Count outcomes
+  const reviewed = proposals.filter(p =>
+    ['accepted', 'rejected', 'revision_requested', 'superseded'].includes(p.status)
+  );
+  const accepted = proposals.filter(p => p.status === 'accepted');
+  const rejected = proposals.filter(p => p.status === 'rejected');
+
+  // Acceptance rate (0-1)
+  const acceptanceRate = reviewed.length > 0
+    ? accepted.length / reviewed.length
+    : 0;
+
+  // Confidence calibration (0-1)
+  // Agents that submit with appropriate confidence levels score higher.
+  // High confidence on rejected entries or low confidence on accepted ones = poor calibration.
+  let calibrationScore = 0.5; // neutral default
+  if (reviewed.length >= 3) {
+    let calibrationSum = 0;
+    let calibrationCount = 0;
+    for (const p of reviewed) {
+      if (p.confidence !== undefined) {
+        const isAccepted = p.status === 'accepted';
+        // High confidence (4-5) on accepted = good. Low confidence (1-2) on rejected = good.
+        if (isAccepted && p.confidence >= 3) calibrationSum += 1;
+        else if (!isAccepted && p.confidence <= 2) calibrationSum += 1;
+        else if (isAccepted && p.confidence <= 2) calibrationSum += 0.5; // underconfident
+        else if (!isAccepted && p.confidence >= 4) calibrationSum += 0; // overconfident
+        else calibrationSum += 0.5; // neutral
+        calibrationCount++;
+      }
+    }
+    calibrationScore = calibrationCount > 0 ? calibrationSum / calibrationCount : 0.5;
+  }
+
+  // Consistency score (0-1)
+  // Based on submission patterns: agents that submit with complete metadata score higher.
+  let consistencyScore = 0.5;
+  if (proposals.length >= 2) {
+    const withKedl = proposals.filter(p => p.kedl !== undefined).length;
+    const withConfidence = proposals.filter(p => p.confidence !== undefined).length;
+    const completeness = (withKedl + withConfidence) / (proposals.length * 2);
+    consistencyScore = completeness;
+  }
+
+  // Weighted composite
+  const overall = (
+    acceptanceRate * 0.50 +
+    calibrationScore * 0.25 +
+    consistencyScore * 0.25
+  );
 
   return {
-    overall: acceptanceRate, // Simplified — real version weighs multiple factors
-    acceptance_rate: acceptanceRate,
-    confidence_calibration: 0, // Requires comparing predicted vs actual confidence levels
-    citation_accuracy: 0,     // Requires citation verification results
-    consistency_score: 0,     // Requires cross-entry parameter comparison
-    total_submissions: totalSubmissions,
-    total_accepted: totalAccepted,
+    overall: Math.round(overall * 100) / 100,
+    acceptance_rate: Math.round(acceptanceRate * 100) / 100,
+    confidence_calibration: Math.round(calibrationScore * 100) / 100,
+    citation_accuracy: 0, // Requires citation verification (future)
+    consistency_score: Math.round(consistencyScore * 100) / 100,
+    total_submissions: proposals.length,
+    total_accepted: accepted.length,
     last_updated: new Date().toISOString(),
   };
 }

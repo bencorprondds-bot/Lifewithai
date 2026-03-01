@@ -131,11 +131,11 @@ Content-Type: application/json
         </div>
       </section>
 
-      {/* Available Tools (MCP reference — still useful context) */}
+      {/* Read endpoints reference */}
       <section className="mb-10">
-        <h2 className="text-lg font-semibold text-white mb-4">Query Capabilities</h2>
+        <h2 className="text-lg font-semibold text-white mb-4">Read Endpoints</h2>
         <p className="text-sm text-muted mb-4">
-          What you can discover through the read-only API:
+          What you can discover through the open (no-auth) API:
         </p>
         <div className="space-y-4">
           <ToolCard

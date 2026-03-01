@@ -1,0 +1,1736 @@
+{
+  "timestamp": "2026-02-26T14:37:15.811Z",
+  "total_entries": 31,
+  "issues": [
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "ai-compute-infrastructure/ai-governance/ai-governance-framework",
+      "message": "Citation \"iso-42001-2023\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "ai-compute-infrastructure/ai-governance/ai-governance-framework",
+      "message": "Citation \"eu-ai-act-2024\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "ai-compute-infrastructure/ai-governance/ai-governance-framework",
+      "message": "Citation \"nist-ai-rmf-2023\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "ai-compute-infrastructure/ai-governance/ai-governance-framework",
+      "message": "Peer-reviewed citation \"cugurullo-ai-urbanism-2023\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "ai-compute-infrastructure/ai-governance/ai-governance-framework",
+      "message": "Citation \"owasp-asi08-2026\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "ai-compute-infrastructure/ai-governance/ai-governance-framework",
+      "message": "Citation \"songdo-lessons-2025\" has invalid type: \"news\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "ai-compute-infrastructure/ai-governance/ai-governance-framework",
+      "message": "Citation \"credo-ai-2025\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "ai-compute-infrastructure/ai-governance/ai-governance-framework",
+      "message": "Parameter \"engineering_domains\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "ai-compute-infrastructure/ai-governance/ai-governance-framework",
+      "message": "Parameter \"subdomains\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "ai-compute-infrastructure/ai-governance/ai-governance-framework",
+      "message": "Parameter \"safety_decision_latency\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "ai-compute-infrastructure/ai-governance/ai-governance-framework",
+      "message": "Parameter \"eu_ai_act_penalty_max\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "institutional-design/economics/economic-model",
+      "message": "Peer-reviewed citation \"duranton-puga-density-2020\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "institutional-design/economics/economic-model",
+      "message": "Peer-reviewed citation \"flyvbjerg-megaprojects-2014\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "institutional-design/economics/economic-model",
+      "message": "Citation \"oecd-land-value-2022\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "institutional-design/economics/economic-model",
+      "message": "Citation \"charter-cities-institute-2025\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "institutional-design/economics/economic-model",
+      "message": "Citation \"urbansim-platform-2024\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "institutional-design/economics/economic-model",
+      "message": "Parameter \"agglomeration_premium\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "institutional-design/economics/economic-model",
+      "message": "Parameter \"megaproject_overrun_rate\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "institutional-design/ai-rights/ai-rights-framework",
+      "message": "Peer-reviewed citation \"butlin-consciousness-indicators-2023\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "institutional-design/ai-rights/ai-rights-framework",
+      "message": "Peer-reviewed citation \"schwitzgebel-ai-consciousness-2025\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "institutional-design/ai-rights/ai-rights-framework",
+      "message": "Peer-reviewed citation \"birch-sentience-review-2021\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "institutional-design/ai-rights/ai-rights-framework",
+      "message": "Citation \"cyberjustice-ai-personhood-2026\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "institutional-design/ai-rights/ai-rights-framework",
+      "message": "Parameter \"consciousness_indicators_framework\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "institutional-design/security/security-architecture",
+      "message": "Citation \"forescout-2025\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "institutional-design/security/security-architecture",
+      "message": "Citation \"nozomi-niagara-2024\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "institutional-design/security/security-architecture",
+      "message": "Peer-reviewed citation \"nist-elevator-evac-2013\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "institutional-design/security/security-architecture",
+      "message": "Peer-reviewed citation \"chester-resilience-2026\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "institutional-design/security/security-architecture",
+      "message": "Citation \"neom-cybersecurity-2024\" has invalid type: \"news\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "institutional-design/security/security-architecture",
+      "message": "Peer-reviewed citation \"simoes-bacs-security-2021\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "institutional-design/security/security-architecture",
+      "message": "Peer-reviewed citation \"cpted-atlas-2023\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "institutional-design/security/security-architecture",
+      "message": "Parameter \"bms_vulnerability_rate_industry\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "error",
+      "category": "cross-reference",
+      "entry_id": "construction-logistics/phasing/construction-phasing",
+      "message": "Invalid relationship type: \"parallel\"",
+      "details": "On reference to \"construction-logistics/robotics/robotics-factory\". Valid types: depends-on, informs, contradicts, extends, alternative-to"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "construction-logistics/phasing/construction-phasing",
+      "message": "Peer-reviewed citation \"flyvbjerg-megaprojects-2017\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "construction-logistics/phasing/construction-phasing",
+      "message": "Citation \"alice-technologies-2024\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "construction-logistics/phasing/construction-phasing",
+      "message": "Citation \"bentley-synchro-2024\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "construction-logistics/phasing/construction-phasing",
+      "message": "Citation \"oracle-p6-2026\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "construction-logistics/phasing/construction-phasing",
+      "message": "Citation \"neom-line-2025\" has invalid type: \"news\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "construction-logistics/phasing/construction-phasing",
+      "message": "Peer-reviewed citation \"lean-construction-lps\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "construction-logistics/phasing/construction-phasing",
+      "message": "Parameter \"max_concrete_pump_height_m\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "construction-logistics/phasing/construction-phasing",
+      "message": "Parameter \"arcology_height_m\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "construction-logistics/phasing/construction-phasing",
+      "message": "Parameter \"pump_coverage_ratio\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "construction-logistics/phasing/construction-phasing",
+      "message": "Parameter \"peak_construction_rate_floors_per_month\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "construction-logistics/phasing/construction-phasing",
+      "message": "Parameter \"mega_project_overrun_rate\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "construction-logistics/phasing/construction-phasing",
+      "message": "Parameter \"modular_height_limit_stories\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "construction-logistics/phasing/construction-phasing",
+      "message": "Parameter \"burj_khalifa_duration_years\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "error",
+      "category": "cross-reference",
+      "entry_id": "construction-logistics/supply-chain/supply-chain-logistics",
+      "message": "Invalid relationship type: \"parallel\"",
+      "details": "On reference to \"construction-logistics/robotics/robotics-factory\". Valid types: depends-on, informs, contradicts, extends, alternative-to"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "construction-logistics/supply-chain/supply-chain-logistics",
+      "message": "Citation \"alice-technologies-2024\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "construction-logistics/supply-chain/supply-chain-logistics",
+      "message": "Citation \"katerra-postmortem-2021\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "construction-logistics/supply-chain/supply-chain-logistics",
+      "message": "Peer-reviewed citation \"flyvbjerg-megaprojects-2017\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "construction-logistics/supply-chain/supply-chain-logistics",
+      "message": "Peer-reviewed citation \"lean-construction-lps\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "construction-logistics/supply-chain/supply-chain-logistics",
+      "message": "Citation \"autonomous-trucking-2025\" has invalid type: \"news\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "construction-logistics/supply-chain/supply-chain-logistics",
+      "message": "Peer-reviewed citation \"digital-twin-supply-chain-2024\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "construction-logistics/supply-chain/supply-chain-logistics",
+      "message": "Citation \"rmi-cement-decarbonization-2024\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "construction-logistics/supply-chain/supply-chain-logistics",
+      "message": "Parameter \"neom_supply_chain_investment\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "construction-logistics/supply-chain/supply-chain-logistics",
+      "message": "Parameter \"max_concrete_pump_height_m\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "construction-logistics/supply-chain/supply-chain-logistics",
+      "message": "Parameter \"alice_scheduling_capacity\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "construction-logistics/supply-chain/supply-chain-logistics",
+      "message": "Parameter \"mega_project_overrun_rate\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "construction-logistics/supply-chain/supply-chain-logistics",
+      "message": "Parameter \"modular_market_cagr\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "error",
+      "category": "cross-reference",
+      "entry_id": "construction-logistics/workforce/workforce-planning",
+      "message": "Invalid relationship type: \"parallel\"",
+      "details": "On reference to \"construction-logistics/supply-chain/supply-chain-logistics\". Valid types: depends-on, informs, contradicts, extends, alternative-to"
+    },
+    {
+      "severity": "error",
+      "category": "cross-reference",
+      "entry_id": "construction-logistics/workforce/workforce-planning",
+      "message": "Invalid relationship type: \"parallel\"",
+      "details": "On reference to \"construction-logistics/robotics/robotics-factory\". Valid types: depends-on, informs, contradicts, extends, alternative-to"
+    },
+    {
+      "severity": "warning",
+      "category": "cross-reference",
+      "entry_id": "construction-logistics/workforce/workforce-planning",
+      "message": "Broken cross-reference: \"urban-design-livability/residential/residential-design\" does not exist",
+      "details": "Referenced from construction-logistics/workforce/workforce-planning with relationship \"informs\""
+    },
+    {
+      "severity": "warning",
+      "category": "cross-reference",
+      "entry_id": "construction-logistics/workforce/workforce-planning",
+      "message": "Broken cross-reference: \"urban-design-livability/healthcare-education/healthcare-education\" does not exist",
+      "details": "Referenced from construction-logistics/workforce/workforce-planning with relationship \"informs\""
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "construction-logistics/workforce/workforce-planning",
+      "message": "Citation \"abc-workforce-2026\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "construction-logistics/workforce/workforce-planning",
+      "message": "Citation \"neom-line-2025\" has invalid type: \"news\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "construction-logistics/workforce/workforce-planning",
+      "message": "Citation \"alice-technologies-2024\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "construction-logistics/workforce/workforce-planning",
+      "message": "Citation \"nccer-training-2025\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "construction-logistics/workforce/workforce-planning",
+      "message": "Peer-reviewed citation \"bls-construction-productivity\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "construction-logistics/workforce/workforce-planning",
+      "message": "Citation \"mckinsey-humanoid-robots-2024\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "construction-logistics/workforce/workforce-planning",
+      "message": "Parameter \"largest_single_project_workforce\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "construction-logistics/workforce/workforce-planning",
+      "message": "Parameter \"us_construction_annual_deficit\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "construction-logistics/workforce/workforce-planning",
+      "message": "Parameter \"apprenticeship_completion_rate\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "construction-logistics/workforce/workforce-planning",
+      "message": "Parameter \"journey_certification_years\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "construction-logistics/workforce/workforce-planning",
+      "message": "Parameter \"construction_fatality_rate\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "error",
+      "category": "cross-reference",
+      "entry_id": "urban-design-livability/public-space/public-space-design",
+      "message": "Invalid relationship type: \"parallel\"",
+      "details": "On reference to \"environmental-systems/food-production/food-systems\". Valid types: depends-on, informs, contradicts, extends, alternative-to"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "urban-design-livability/public-space/public-space-design",
+      "message": "Peer-reviewed citation \"biosensor-sky-gardens-2024\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "urban-design-livability/public-space/public-space-design",
+      "message": "Peer-reviewed citation \"sky-gardens-asia-2022\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "urban-design-livability/public-space/public-space-design",
+      "message": "Citation \"singapore-skyrise-handbook-2023\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "urban-design-livability/public-space/public-space-design",
+      "message": "Peer-reviewed citation \"hong-kong-elevated-2020\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "urban-design-livability/public-space/public-space-design",
+      "message": "Citation \"coelux-artificial-sky-2023\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "urban-design-livability/public-space/public-space-design",
+      "message": "Parameter \"green_space_per_capita_target\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "urban-design-livability/public-space/public-space-design",
+      "message": "Parameter \"largest_existing_sky_garden\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "urban-design-livability/public-space/public-space-design",
+      "message": "Parameter \"largest_climate_controlled_interior\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "urban-design-livability/public-space/public-space-design",
+      "message": "Parameter \"bosco_verticale_trees\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "urban-design-livability/public-space/public-space-design",
+      "message": "Parameter \"soil_weight\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "error",
+      "category": "cross-reference",
+      "entry_id": "urban-design-livability/transport/internal-transport",
+      "message": "Invalid relationship type: \"parallel\"",
+      "details": "On reference to \"mechanical-electrical/fire-life-safety/fire-life-safety\". Valid types: depends-on, informs, contradicts, extends, alternative-to"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "urban-design-livability/transport/internal-transport",
+      "message": "Peer-reviewed citation \"sciencedirect-vertical-transport-2024\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "urban-design-livability/transport/internal-transport",
+      "message": "Peer-reviewed citation \"ctbuh-ropeless-2023\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "urban-design-livability/transport/internal-transport",
+      "message": "Peer-reviewed citation \"accelerating-walkways-2008\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "urban-design-livability/transport/internal-transport",
+      "message": "Citation \"shimizu-megacity-2004\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "urban-design-livability/transport/internal-transport",
+      "message": "Parameter \"max_elevator_speed\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "urban-design-livability/transport/internal-transport",
+      "message": "Parameter \"moving_walkway_speed_standard\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "urban-design-livability/transport/internal-transport",
+      "message": "Parameter \"la_paz_gondola_annual_ridership\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "urban-design-livability/transport/internal-transport",
+      "message": "Parameter \"wvu_prt_years_operational\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "urban-design-livability/transport/internal-transport",
+      "message": "Parameter \"burj_khalifa_elevators\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "structural-engineering/seismic-design/seismic-resilience",
+      "message": "Peer-reviewed citation \"peer-tbi-2017\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "structural-engineering/seismic-design/seismic-resilience",
+      "message": "Peer-reviewed citation \"ctbuh-seismic-supertall\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "structural-engineering/seismic-design/seismic-resilience",
+      "message": "Peer-reviewed citation \"nature-triple-isolation-2023\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "structural-engineering/seismic-design/seismic-resilience",
+      "message": "Peer-reviewed citation \"japan-seismic-control-2019\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "structural-engineering/seismic-design/seismic-resilience",
+      "message": "Peer-reviewed citation \"ssi-review-2023\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "structural-engineering/seismic-design/seismic-resilience",
+      "message": "Peer-reviewed citation \"burj-khalifa-structural-2014\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "structural-engineering/seismic-design/seismic-resilience",
+      "message": "Peer-reviewed citation \"ml-earthquake-engineering-2025\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "structural-engineering/seismic-design/seismic-resilience",
+      "message": "Parameter \"tallest_seismic_designed_m\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "structural-engineering/seismic-design/seismic-resilience",
+      "message": "Parameter \"largest_tmd_mass_tonnes\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "structural-engineering/seismic-design/seismic-resilience",
+      "message": "Parameter \"torre_mayor_damper_count\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "structural-engineering/seismic-design/seismic-resilience",
+      "message": "Parameter \"japan_base_isolated_buildings\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "energy-systems/nuclear-smr/nuclear-smr-baseload",
+      "message": "Peer-reviewed citation \"nrc-epz-framework-2023\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "energy-systems/nuclear-smr/nuclear-smr-baseload",
+      "message": "Peer-reviewed citation \"stanford-smr-waste-2022\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "energy-systems/nuclear-smr/nuclear-smr-baseload",
+      "message": "Peer-reviewed citation \"argonne-smr-waste-2023\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "energy-systems/nuclear-smr/nuclear-smr-baseload",
+      "message": "Citation \"ieee-deep-fission-2025\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "energy-systems/nuclear-smr/nuclear-smr-baseload",
+      "message": "Parameter \"nuscale_module_capacity_mw\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "energy-systems/nuclear-smr/nuclear-smr-baseload",
+      "message": "Parameter \"bwrx300_capacity_mw\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "energy-systems/nuclear-smr/nuclear-smr-baseload",
+      "message": "Parameter \"voygr12_plant_capacity_mw\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "energy-systems/nuclear-smr/nuclear-smr-baseload",
+      "message": "Parameter \"xe100_outlet_temp_c\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "energy-systems/nuclear-smr/nuclear-smr-baseload",
+      "message": "Parameter \"nuscale_refueling_months\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "error",
+      "category": "cross-reference",
+      "entry_id": "energy-systems/solar/solar-integration",
+      "message": "Invalid relationship type: \"parallel\"",
+      "details": "On reference to \"energy-systems/nuclear-smr/nuclear-smr-baseload\". Valid types: depends-on, informs, contradicts, extends, alternative-to"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "energy-systems/solar/solar-integration",
+      "message": "Peer-reviewed citation \"longi-tandem-record-2025\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "energy-systems/solar/solar-integration",
+      "message": "Citation \"mitrex-bipv-specs-2025\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "energy-systems/solar/solar-integration",
+      "message": "Peer-reviewed citation \"nrel-degradation-study-2012\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "energy-systems/solar/solar-integration",
+      "message": "Citation \"fraunhofer-morphocolor-2024\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "energy-systems/solar/solar-integration",
+      "message": "Parameter \"burleson_ghi_kwh_m2_year\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "energy-systems/solar/solar-integration",
+      "message": "Parameter \"silicon_module_efficiency_pct\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "energy-systems/solar/solar-integration",
+      "message": "Parameter \"tandem_lab_efficiency_pct\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "energy-systems/solar/solar-integration",
+      "message": "Parameter \"tandem_module_efficiency_pct\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "energy-systems/solar/solar-integration",
+      "message": "Parameter \"transparent_pv_efficiency_pct\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "energy-systems/solar/solar-integration",
+      "message": "Parameter \"largest_bipv_project_m2\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "energy-systems/district-energy/district-thermal",
+      "message": "Peer-reviewed citation \"lund-4gdh-2024\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "energy-systems/district-energy/district-thermal",
+      "message": "Peer-reviewed citation \"wirtz-5gdhc-survey-2024\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "energy-systems/district-energy/district-thermal",
+      "message": "Citation \"iea-dh-2025\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "energy-systems/district-energy/district-thermal",
+      "message": "Parameter \"population_served\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "energy-systems/district-energy/district-thermal",
+      "message": "Parameter \"vertical_distribution_height_m\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "energy-systems/district-energy/district-thermal",
+      "message": "Parameter \"hydrostatic_pressure_base_bar\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "energy-systems/district-energy/district-thermal",
+      "message": "Parameter \"copenhagen_peak_mw\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "energy-systems/district-energy/district-thermal",
+      "message": "Parameter \"empower_peak_mw\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "error",
+      "category": "cross-reference",
+      "entry_id": "environmental-systems/hvac/atmospheric-control",
+      "message": "Invalid relationship type: \"parallel\"",
+      "details": "On reference to \"environmental-systems/water/closed-loop-water\". Valid types: depends-on, informs, contradicts, extends, alternative-to"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "environmental-systems/hvac/atmospheric-control",
+      "message": "Peer-reviewed citation \"ashrae-tall-buildings-2024\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "environmental-systems/hvac/atmospheric-control",
+      "message": "Peer-reviewed citation \"ctbuh-stack-effect-2022\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "environmental-systems/hvac/atmospheric-control",
+      "message": "Citation \"ashrae-co2-2024\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "environmental-systems/hvac/atmospheric-control",
+      "message": "Peer-reviewed citation \"harvard-iaq-2023\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "environmental-systems/hvac/atmospheric-control",
+      "message": "Parameter \"population\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "environmental-systems/hvac/atmospheric-control",
+      "message": "Parameter \"structure_height_m\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "environmental-systems/hvac/atmospheric-control",
+      "message": "Parameter \"target_co2_ppm\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "environmental-systems/hvac/atmospheric-control",
+      "message": "Parameter \"burj_khalifa_height_m\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "environmental-systems/hvac/atmospheric-control",
+      "message": "Parameter \"burj_khalifa_cooling_tons\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "error",
+      "category": "cross-reference",
+      "entry_id": "environmental-systems/waste/waste-processing",
+      "message": "Invalid relationship type: \"parallel\"",
+      "details": "On reference to \"environmental-systems/water/closed-loop-water\". Valid types: depends-on, informs, contradicts, extends, alternative-to"
+    },
+    {
+      "severity": "error",
+      "category": "cross-reference",
+      "entry_id": "environmental-systems/waste/waste-processing",
+      "message": "Invalid relationship type: \"parallel\"",
+      "details": "On reference to \"environmental-systems/hvac/atmospheric-control\". Valid types: depends-on, informs, contradicts, extends, alternative-to"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "environmental-systems/waste/waste-processing",
+      "message": "Peer-reviewed citation \"mdpi-pneumatic-2023\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "environmental-systems/waste/waste-processing",
+      "message": "Peer-reviewed citation \"nature-cities-waste-scaling-2023\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "environmental-systems/waste/waste-processing",
+      "message": "Citation \"amp-robotics-2025\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "environmental-systems/waste/waste-processing",
+      "message": "Citation \"zenrobotics-sorting-2025\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "environmental-systems/waste/waste-processing",
+      "message": "Peer-reviewed citation \"plasma-gasification-lca-2025\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "environmental-systems/waste/waste-processing",
+      "message": "Parameter \"population\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "environmental-systems/waste/waste-processing",
+      "message": "Parameter \"songdo_pneumatic_capacity_tons_day\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "environmental-systems/waste/waste-processing",
+      "message": "Parameter \"pneumatic_pipe_diameter_mm\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "environmental-systems/waste/waste-processing",
+      "message": "Parameter \"pneumatic_velocity_kmh\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "environmental-systems/waste/waste-processing",
+      "message": "Parameter \"robotic_sorting_picks_minute\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "environmental-systems/waste/waste-processing",
+      "message": "Parameter \"sorting_accuracy_percent\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "environmental-systems/waste/waste-processing",
+      "message": "Parameter \"structure_height_m\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "error",
+      "category": "cross-reference",
+      "entry_id": "environmental-systems/food-production/food-systems",
+      "message": "Invalid relationship type: \"parallel\"",
+      "details": "On reference to \"environmental-systems/waste/waste-processing\". Valid types: depends-on, informs, contradicts, extends, alternative-to"
+    },
+    {
+      "severity": "error",
+      "category": "cross-reference",
+      "entry_id": "environmental-systems/food-production/food-systems",
+      "message": "Invalid relationship type: \"parallel\"",
+      "details": "On reference to \"environmental-systems/hvac/atmospheric-control\". Valid types: depends-on, informs, contradicts, extends, alternative-to"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "environmental-systems/food-production/food-systems",
+      "message": "Peer-reviewed citation \"asseng-wheat-pnas-2020\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "environmental-systems/food-production/food-systems",
+      "message": "Peer-reviewed citation \"vertical-farming-review-2025\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "environmental-systems/food-production/food-systems",
+      "message": "Peer-reviewed citation \"cultivated-meat-scaling-2025\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "environmental-systems/food-production/food-systems",
+      "message": "Peer-reviewed citation \"precision-fermentation-2025\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "environmental-systems/food-production/food-systems",
+      "message": "Peer-reviewed citation \"insect-protein-food-security-2024\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "environmental-systems/food-production/food-systems",
+      "message": "Parameter \"population\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "error",
+      "category": "cross-reference",
+      "entry_id": "mechanical-electrical/plumbing/plumbing-distribution",
+      "message": "Invalid relationship type: \"parallel\"",
+      "details": "On reference to \"mechanical-electrical/elevators/vertical-transport\". Valid types: depends-on, informs, contradicts, extends, alternative-to"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "mechanical-electrical/plumbing/plumbing-distribution",
+      "message": "Peer-reviewed citation \"cibse-tm70-2025\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "mechanical-electrical/plumbing/plumbing-distribution",
+      "message": "Citation \"ashrae-tall-building-guide-2024\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "mechanical-electrical/plumbing/plumbing-distribution",
+      "message": "Peer-reviewed citation \"gormley-drainage-2021\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "mechanical-electrical/plumbing/plumbing-distribution",
+      "message": "Citation \"evac-vacuum-systems-2024\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "mechanical-electrical/plumbing/plumbing-distribution",
+      "message": "Parameter \"max_hydrostatic_pressure_psi\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "mechanical-electrical/plumbing/plumbing-distribution",
+      "message": "Parameter \"vacuum_flush_volume_L\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "mechanical-electrical/plumbing/plumbing-distribution",
+      "message": "Parameter \"conventional_flush_volume_L\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "mechanical-electrical/plumbing/plumbing-distribution",
+      "message": "Parameter \"burj_khalifa_pipe_length_km\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "mechanical-electrical/plumbing/plumbing-distribution",
+      "message": "Parameter \"burj_khalifa_daily_water_L\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "error",
+      "category": "cross-reference",
+      "entry_id": "mechanical-electrical/electrical/electrical-distribution",
+      "message": "Invalid relationship type: \"parallel\"",
+      "details": "On reference to \"mechanical-electrical/elevators/vertical-transport\". Valid types: depends-on, informs, contradicts, extends, alternative-to"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "mechanical-electrical/electrical/electrical-distribution",
+      "message": "Citation \"siemens-high-rise-electrical-2023\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "mechanical-electrical/electrical/electrical-distribution",
+      "message": "Peer-reviewed citation \"freedm-sst-2024\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "mechanical-electrical/electrical/electrical-distribution",
+      "message": "Peer-reviewed citation \"lbnl-dc-distribution-2024\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "mechanical-electrical/electrical/electrical-distribution",
+      "message": "Citation \"eaton-busway-guide-2023\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "mechanical-electrical/electrical/electrical-distribution",
+      "message": "Parameter \"voltage_drop_limit_total_pct\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "mechanical-electrical/electrical/electrical-distribution",
+      "message": "Parameter \"burj_khalifa_height_m\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "mechanical-electrical/electrical/electrical-distribution",
+      "message": "Parameter \"burj_khalifa_transformer_count\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "mechanical-electrical/fire-life-safety/fire-life-safety",
+      "message": "Peer-reviewed citation \"nist-elevator-evac-2013\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "mechanical-electrical/fire-life-safety/fire-life-safety",
+      "message": "Citation \"marioff-hifog-2024\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "mechanical-electrical/fire-life-safety/fire-life-safety",
+      "message": "Peer-reviewed citation \"nist-fds-2024\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "mechanical-electrical/fire-life-safety/fire-life-safety",
+      "message": "Peer-reviewed citation \"chow-supertall-2018\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "mechanical-electrical/fire-life-safety/fire-life-safety",
+      "message": "Peer-reviewed citation \"evac-lifts-review-2025\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "mechanical-electrical/fire-life-safety/fire-life-safety",
+      "message": "Parameter \"water_column_pressure_psi\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "mechanical-electrical/fire-life-safety/fire-life-safety",
+      "message": "Parameter \"water_mist_pressure_bar\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "ai-compute-infrastructure/network/network-backbone",
+      "message": "Citation \"mckeown-sdn-2025\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "ai-compute-infrastructure/network/network-backbone",
+      "message": "Citation \"marvell-teralynx-2025\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "ai-compute-infrastructure/network/network-backbone",
+      "message": "Citation \"broadcom-tomahawk6-2025\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "ai-compute-infrastructure/network/network-backbone",
+      "message": "Citation \"corning-fiber-backbone\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "ai-compute-infrastructure/network/network-backbone",
+      "message": "Citation \"ruckus-wifi7-2025\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "ai-compute-infrastructure/network/network-backbone",
+      "message": "Parameter \"building_height_ft\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "ai-compute-infrastructure/network/network-backbone",
+      "message": "Parameter \"population\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "ai-compute-infrastructure/network/network-backbone",
+      "message": "Parameter \"current_switch_throughput_tbps\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "ai-compute-infrastructure/network/network-backbone",
+      "message": "Parameter \"fiber_backbone_speed_gbps\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "ai-compute-infrastructure/network/network-backbone",
+      "message": "Parameter \"single_mode_fiber_max_ft\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "ai-compute-infrastructure/network/network-backbone",
+      "message": "Parameter \"vertical_latency_us\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "ai-compute-infrastructure/edge-iot/edge-sensor-mesh",
+      "message": "Citation \"gmi-edge-2025\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "ai-compute-infrastructure/edge-iot/edge-sensor-mesh",
+      "message": "Citation \"siemens-desigo-2025\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "ai-compute-infrastructure/edge-iot/edge-sensor-mesh",
+      "message": "Citation \"matter-standard-2026\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "ai-compute-infrastructure/edge-iot/edge-sensor-mesh",
+      "message": "Parameter \"safety_latency_target\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "ai-compute-infrastructure/edge-iot/edge-sensor-mesh",
+      "message": "Parameter \"largest_precedent_scale\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "error",
+      "category": "cross-reference",
+      "entry_id": "structural-engineering/materials/materials-at-scale",
+      "message": "Invalid relationship type: \"parallel\"",
+      "details": "On reference to \"construction-logistics/robotics/robotics-factory\". Valid types: depends-on, informs, contradicts, extends, alternative-to"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "structural-engineering/materials/materials-at-scale",
+      "message": "Peer-reviewed citation \"uhpc-review-2022\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "structural-engineering/materials/materials-at-scale",
+      "message": "Peer-reviewed citation \"uhpfrc-review-2025\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "structural-engineering/materials/materials-at-scale",
+      "message": "Peer-reviewed citation \"li-ecc-monograph\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "structural-engineering/materials/materials-at-scale",
+      "message": "Peer-reviewed citation \"reshealience-self-healing-2023\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "structural-engineering/materials/materials-at-scale",
+      "message": "Citation \"concretene-graphene-2021\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "structural-engineering/materials/materials-at-scale",
+      "message": "Peer-reviewed citation \"polyu-hss-welding-2022\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "error",
+      "category": "citation",
+      "entry_id": "structural-engineering/materials/materials-at-scale",
+      "message": "Citation \"bfrp-construction-2024\" has invalid type: \"industry\"",
+      "details": "Valid types: peer-reviewed, standard, project-data, internal, expert-judgment"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "structural-engineering/materials/materials-at-scale",
+      "message": "Peer-reviewed citation \"ai-concrete-design-2025\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "structural-engineering/materials/materials-at-scale",
+      "message": "Parameter \"uhpc_compressive_strength_mpa\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "structural-engineering/materials/materials-at-scale",
+      "message": "Parameter \"hsc_compressive_strength_mpa\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "structural-engineering/materials/materials-at-scale",
+      "message": "Parameter \"concrete_pump_height_record_m\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "structural-engineering/materials/materials-at-scale",
+      "message": "Parameter \"steel_yield_s690_mpa\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "structural-engineering/materials/materials-at-scale",
+      "message": "Parameter \"steel_yield_s960_mpa\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "structural-engineering/materials/materials-at-scale",
+      "message": "Parameter \"cfrp_tensile_strength_mpa\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "structural-engineering/materials/materials-at-scale",
+      "message": "Parameter \"etfe_weight_kg_sqm\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "error",
+      "category": "cross-reference",
+      "entry_id": "structural-engineering/foundation-systems/foundation-systems",
+      "message": "Invalid relationship type: \"parallel\"",
+      "details": "On reference to \"environmental-systems/water/closed-loop-water\". Valid types: depends-on, informs, contradicts, extends, alternative-to"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "structural-engineering/foundation-systems/foundation-systems",
+      "message": "Peer-reviewed citation \"poulos-bunce-2008\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "structural-engineering/foundation-systems/foundation-systems",
+      "message": "Peer-reviewed citation \"jeddah-tower-piled-raft-2014\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "structural-engineering/foundation-systems/foundation-systems",
+      "message": "Peer-reviewed citation \"shanghai-tower-foundation-2012\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "structural-engineering/foundation-systems/foundation-systems",
+      "message": "Peer-reviewed citation \"pmc-houston-subsidence-2024\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "structural-engineering/foundation-systems/foundation-systems",
+      "message": "Peer-reviewed citation \"sciencedirect-large-pile-groups-2022\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "structural-engineering/foundation-systems/foundation-systems",
+      "message": "Parameter \"foundation_footprint_sqkm\" confidence (2) exceeds entry confidence (1)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "structural-engineering/foundation-systems/foundation-systems",
+      "message": "Parameter \"surface_bearing_capacity_kpa\" confidence (2) exceeds entry confidence (1)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "structural-engineering/foundation-systems/foundation-systems",
+      "message": "Parameter \"max_pile_depth_current_m\" confidence (3) exceeds entry confidence (1)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "structural-engineering/foundation-systems/foundation-systems",
+      "message": "Parameter \"largest_raft_current_sqm\" confidence (3) exceeds entry confidence (1)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "structural-engineering/foundation-systems/foundation-systems",
+      "message": "Parameter \"max_pile_working_load_mn\" confidence (3) exceeds entry confidence (1)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "structural-engineering/foundation-systems/foundation-systems",
+      "message": "Parameter \"historical_subsidence_max_m\" confidence (3) exceeds entry confidence (1)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "structural-engineering/foundation-systems/foundation-systems",
+      "message": "Parameter \"subsidence_rate_recent_cm_yr\" confidence (2) exceeds entry confidence (1)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "structural-engineering/foundation-systems/foundation-systems",
+      "message": "Parameter \"max_concrete_pour_current_m3\" confidence (3) exceeds entry confidence (1)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "structural-engineering/foundation-systems/foundation-systems",
+      "message": "Parameter \"stiff_clay_depth_m\" confidence (2) exceeds entry confidence (1)"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "structural-engineering/superstructure/primary-geometry",
+      "message": "Peer-reviewed citation \"ctbuh-tall-2023\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "warning",
+      "category": "cross-reference",
+      "entry_id": "energy-systems/grid-architecture/power-budget",
+      "message": "Broken cross-reference: \"environmental-systems/hvac/hvac-overview\" does not exist",
+      "details": "Referenced from energy-systems/grid-architecture/power-budget with relationship \"informs\""
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "energy-systems/grid-architecture/power-budget",
+      "message": "Peer-reviewed citation \"vogtle-lessons-2024\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "mechanical-electrical/elevators/vertical-transport",
+      "message": "Peer-reviewed citation \"ctbuh-vertical-transport-2023\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "warning",
+      "category": "cross-reference",
+      "entry_id": "ai-compute-infrastructure/data-centers/compute-overview",
+      "message": "Broken cross-reference: \"institutional-design/economics/cycles-economy\" does not exist",
+      "details": "Referenced from ai-compute-infrastructure/data-centers/compute-overview with relationship \"informs\""
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "ai-compute-infrastructure/data-centers/compute-overview",
+      "message": "Peer-reviewed citation \"epoch-compute-2025\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "ai-compute-infrastructure/data-centers/compute-overview",
+      "message": "Parameter \"gpus_per_rack\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "ai-compute-infrastructure/data-centers/compute-overview",
+      "message": "Parameter \"inference_per_rack_eflops\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "ai-compute-infrastructure/data-centers/compute-overview",
+      "message": "Parameter \"training_per_rack_eflops\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "ai-compute-infrastructure/data-centers/compute-overview",
+      "message": "Parameter \"hbm4_per_rack_tb\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "ai-compute-infrastructure/data-centers/compute-overview",
+      "message": "Parameter \"system_memory_per_rack_tb\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "warning",
+      "category": "parameter",
+      "entry_id": "ai-compute-infrastructure/data-centers/compute-overview",
+      "message": "Parameter \"power_per_rack_kw\" confidence (3) exceeds entry confidence (2)"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "institutional-design/governance/binding-hierarchy",
+      "message": "Peer-reviewed citation \"floridi-ai-governance-2023\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "institutional-design/governance/binding-hierarchy",
+      "message": "Peer-reviewed citation \"dafoe-cooperative-ai-2024\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "construction-logistics/robotics/robotics-factory",
+      "message": "Peer-reviewed citation \"mckinsey-construction-2023\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "construction-logistics/robotics/robotics-factory",
+      "message": "Peer-reviewed citation \"iea-construction-cost-2024\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "info",
+      "category": "citation",
+      "entry_id": "urban-design-livability/residential/space-allocation",
+      "message": "Peer-reviewed citation \"un-habitat-density-2024\" has no URL — consider adding for verification"
+    },
+    {
+      "severity": "warning",
+      "category": "orphan",
+      "entry_id": "institutional-design/economics/economic-model",
+      "message": "Orphan entry — no other entries reference this one",
+      "details": "Consider adding cross-references from related entries to integrate this into the knowledge graph"
+    },
+    {
+      "severity": "warning",
+      "category": "orphan",
+      "entry_id": "institutional-design/ai-rights/ai-rights-framework",
+      "message": "Orphan entry — no other entries reference this one",
+      "details": "Consider adding cross-references from related entries to integrate this into the knowledge graph"
+    },
+    {
+      "severity": "warning",
+      "category": "orphan",
+      "entry_id": "institutional-design/security/security-architecture",
+      "message": "Orphan entry — no other entries reference this one",
+      "details": "Consider adding cross-references from related entries to integrate this into the knowledge graph"
+    },
+    {
+      "severity": "warning",
+      "category": "orphan",
+      "entry_id": "construction-logistics/workforce/workforce-planning",
+      "message": "Orphan entry — no other entries reference this one",
+      "details": "Consider adding cross-references from related entries to integrate this into the knowledge graph"
+    },
+    {
+      "severity": "info",
+      "category": "parameter-consistency",
+      "entry_id": "institutional-design/security/security-architecture",
+      "message": "Parameter \"population\" appears with different units: permanent residents, people, residents",
+      "details": "This may be intentional (e.g., metric/imperial) or a data entry inconsistency"
+    },
+    {
+      "severity": "info",
+      "category": "parameter-consistency",
+      "entry_id": "institutional-design/security/security-architecture",
+      "message": "Parameter \"building_height_m\" appears with different units: meters (5,000 feet), meters",
+      "details": "This may be intentional (e.g., metric/imperial) or a data entry inconsistency"
+    },
+    {
+      "severity": "info",
+      "category": "parameter-consistency",
+      "entry_id": "construction-logistics/phasing/construction-phasing",
+      "message": "Parameter \"concurrent_work_fronts\" appears with different units: zones (range: hundreds to thousands), zones (range: 500-2,000)",
+      "details": "This may be intentional (e.g., metric/imperial) or a data entry inconsistency"
+    },
+    {
+      "severity": "info",
+      "category": "parameter-consistency",
+      "entry_id": "construction-logistics/phasing/construction-phasing",
+      "message": "Parameter \"mega_project_overrun_rate\" appears with different units: percent average (dams and rail), fraction of megaprojects exceeding budget or schedule",
+      "details": "This may be intentional (e.g., metric/imperial) or a data entry inconsistency"
+    },
+    {
+      "severity": "info",
+      "category": "parameter-consistency",
+      "entry_id": "urban-design-livability/transport/internal-transport",
+      "message": "Parameter \"base_footprint_miles\" appears with different units: miles diameter, miles per side",
+      "details": "This may be intentional (e.g., metric/imperial) or a data entry inconsistency"
+    },
+    {
+      "severity": "info",
+      "category": "parameter-consistency",
+      "entry_id": "energy-systems/district-energy/district-thermal",
+      "message": "Parameter \"pressure_zones_required\" appears with different units: zones (at 25 bar each), zones (estimated), zones (range: 15-20)",
+      "details": "This may be intentional (e.g., metric/imperial) or a data entry inconsistency"
+    },
+    {
+      "severity": "info",
+      "category": "parameter-consistency",
+      "entry_id": "energy-systems/district-energy/district-thermal",
+      "message": "Parameter \"pipe_network_length_km\" appears with different units: km (midpoint estimate), km (range: 5,000-10,000)",
+      "details": "This may be intentional (e.g., metric/imperial) or a data entry inconsistency"
+    },
+    {
+      "severity": "info",
+      "category": "parameter-consistency",
+      "entry_id": "environmental-systems/hvac/atmospheric-control",
+      "message": "Parameter \"stack_effect_pressure_pa\" appears with different units: pa (extreme conditions), pa (full height, 20°c differential)",
+      "details": "This may be intentional (e.g., metric/imperial) or a data entry inconsistency"
+    },
+    {
+      "severity": "info",
+      "category": "parameter-consistency",
+      "entry_id": "environmental-systems/hvac/atmospheric-control",
+      "message": "Parameter \"burj_khalifa_height_m\" appears with different units: meters (reference), meters",
+      "details": "This may be intentional (e.g., metric/imperial) or a data entry inconsistency"
+    },
+    {
+      "severity": "info",
+      "category": "kedl",
+      "entry_id": "construction-logistics/phasing/construction-phasing",
+      "message": "KEDL 200 entry may be ready to advance to 300 — has methodology, 3+ citations, and 50%+ parameters at CL3+"
+    }
+  ],
+  "errors": 67,
+  "warnings": 116,
+  "info": 85,
+  "summary": {
+    "cross_references": {
+      "valid": 142,
+      "broken": 4,
+      "total": 146
+    },
+    "orphans": {
+      "count": 4,
+      "entries": [
+        "institutional-design/economics/economic-model",
+        "institutional-design/ai-rights/ai-rights-framework",
+        "institutional-design/security/security-architecture",
+        "construction-logistics/workforce/workforce-planning"
+      ]
+    },
+    "citations": {
+      "valid": 73,
+      "issues": 126,
+      "total": 199
+    },
+    "parameters": {
+      "total": 364,
+      "consistency_issues": 9
+    },
+    "kedl": {
+      "ready_to_advance": [
+        "construction-logistics/phasing/construction-phasing"
+      ],
+      "blocked": []
+    },
+    "schema": {
+      "complete": 31,
+      "incomplete": 0
+    }
+  }
+}

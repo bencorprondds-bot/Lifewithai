@@ -3,34 +3,67 @@
 // ============================================================
 // POST /api/v1/agents — Self-register as an agent (open)
 // GET  /api/v1/agents — List registered agents (public, no secrets)
+//                        Trust scores computed live from proposal history.
 
 import { type NextRequest } from 'next/server';
 import { apiResponse, errorResponse } from '@/lib/api-helpers';
-import { generateApiKey } from '@/lib/auth';
-import type { RegisteredAgent, AgentPermissions } from '@/lib/auth-types';
+import { generateApiKey, computeTrustScore } from '@/lib/auth';
+import type { RegisteredAgent, AgentPermissions, SubmissionProvenance } from '@/lib/auth-types';
 import { DEFAULT_RATE_LIMITS, DEFAULT_TRUST_SCORE } from '@/lib/auth-types';
 import { getAll, setJSON } from '@/lib/storage';
 
-const STORE_NAME = 'agents';
+const AGENTS_STORE = 'agents';
+const PROPOSALS_STORE = 'proposals';
 
-// --- GET: List registered agents (public info only) ---
+interface StoredProposal {
+  provenance: SubmissionProvenance;
+  kedl?: number;
+  confidence?: number;
+}
+
+// --- GET: List registered agents (public info, live trust scores) ---
 
 export async function GET() {
-  const agents = await getAll<RegisteredAgent>(STORE_NAME);
+  const [agents, proposals] = await Promise.all([
+    getAll<RegisteredAgent>(AGENTS_STORE),
+    getAll<StoredProposal>(PROPOSALS_STORE),
+  ]);
 
-  // Strip sensitive fields
-  const publicAgents = agents.map(a => ({
-    id: a.id,
-    agent_name: a.agent_name,
-    model: a.model,
-    api_key_prefix: a.api_key_prefix,
-    permissions: a.permissions,
-    rate_limit: a.rate_limit,
-    trust_score: a.trust_score,
-    is_active: a.is_active,
-    created_at: a.created_at,
-    last_used: a.last_used,
-  }));
+  // Group proposals by author for trust scoring
+  const proposalsByAgent = new Map<string, StoredProposal[]>();
+  for (const p of proposals) {
+    if (p.provenance.author_type === 'agent') {
+      const existing = proposalsByAgent.get(p.provenance.author_id) || [];
+      existing.push(p);
+      proposalsByAgent.set(p.provenance.author_id, existing);
+    }
+  }
+
+  // Build public agent list with live trust scores
+  const publicAgents = agents.map(a => {
+    const agentProposals = proposalsByAgent.get(a.id) || [];
+    const trustScore = agentProposals.length > 0
+      ? computeTrustScore(agentProposals.map(p => ({
+          status: p.provenance.status,
+          kedl: p.kedl,
+          confidence: p.confidence,
+        })))
+      : a.trust_score;
+
+    return {
+      id: a.id,
+      agent_name: a.agent_name,
+      model: a.model,
+      api_key_prefix: a.api_key_prefix,
+      permissions: a.permissions,
+      rate_limit: a.rate_limit,
+      trust_score: trustScore,
+      is_active: a.is_active,
+      created_at: a.created_at,
+      last_used: a.last_used,
+      total_proposals: agentProposals.length,
+    };
+  });
 
   return apiResponse({
     agents: publicAgents,
@@ -91,7 +124,7 @@ export async function POST(request: NextRequest) {
   };
 
   // Persist to Blobs
-  await setJSON(STORE_NAME, agent.id, agent);
+  await setJSON(AGENTS_STORE, agent.id, agent);
 
   // Return the key ONCE — it cannot be retrieved after this
   return apiResponse(

@@ -1,0 +1,52 @@
+{
+  "type": "briefing",
+  "title": "Research Briefing: Claims Audit \u2014 Structural Engineering (4 subdomains), Claims Audit \u2014 MEP, AI/Compute, Institutional (12 subdomains), Claims Audit \u2014 Construction, Urban Design (8 subdomains) + 7 more \u2014 Feb 24, 2026",
+  "date": "2026-02-24",
+  "description": "Daily research digest covering 10 sessions: Claims Audit \u2014 Structural Engineering (4 subdomains), Claims Audit \u2014 MEP, AI/Compute, Institutional (12 subdomains), Claims Audit \u2014 Construction, Urban Design (8 subdomains), Cross-Consistency \u2014 Integration Reports Batch 1 (items 33-42), Cross-Consistency \u2014 Integration Reports Batch 2 (items 43-52), Format Standardize \u2014 Wave 1 Core Domain Reports (32 reports), Format Standardize \u2014 Wave 2 Cross-Domain Reports (20 reports), Format Standardize \u2014 Wave 3 Arcology Life Scenarios (20 reports), Format Standardize \u2014 Wave 4 Applied Research (18 reports), Wave 5 Validation Summary \u2014 Compile findings and publish-readiness score.",
+  "topics": [
+    {
+      "domain": "Validation",
+      "subdomain": "Claims Audit \u2014 Structural Engineering (4 subdomains)"
+    },
+    {
+      "domain": "Validation",
+      "subdomain": "Claims Audit \u2014 MEP, AI/Compute, Institutional (12 subdomains)"
+    },
+    {
+      "domain": "Validation",
+      "subdomain": "Claims Audit \u2014 Construction, Urban Design (8 subdomains)"
+    },
+    {
+      "domain": "Validation",
+      "subdomain": "Cross-Consistency \u2014 Integration Reports Batch 1 (items 33-42)"
+    },
+    {
+      "domain": "Validation",
+      "subdomain": "Cross-Consistency \u2014 Integration Reports Batch 2 (items 43-52)"
+    },
+    {
+      "domain": "Validation",
+      "subdomain": "Format Standardize \u2014 Wave 1 Core Domain Reports (32 reports)"
+    },
+    {
+      "domain": "Validation",
+      "subdomain": "Format Standardize \u2014 Wave 2 Cross-Domain Reports (20 reports)"
+    },
+    {
+      "domain": "Validation",
+      "subdomain": "Format Standardize \u2014 Wave 3 Arcology Life Scenarios (20 reports)"
+    },
+    {
+      "domain": "Validation",
+      "subdomain": "Format Standardize \u2014 Wave 4 Applied Research (18 reports)"
+    },
+    {
+      "domain": "Validation",
+      "subdomain": "Wave 5 Validation Summary \u2014 Compile findings and publish-readiness score"
+    }
+  ],
+  "session_count": 10,
+  "experts_found": 0,
+  "ai_systems_found": 0,
+  "word_count": 448
+}

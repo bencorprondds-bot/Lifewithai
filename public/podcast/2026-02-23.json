@@ -1,0 +1,56 @@
+{
+  "type": "briefing",
+  "title": "Research Briefing: Real-Time Dashboard Frameworks for Next.js, Research Pipeline Visualization Patterns, Singleton vs Distributed AI Trajectories + 8 more \u2014 Feb 23, 2026",
+  "date": "2026-02-23",
+  "description": "Daily research digest covering 11 sessions: Real-Time Dashboard Frameworks for Next.js, Research Pipeline Visualization Patterns, Singleton vs Distributed AI Trajectories, Compute Infrastructure Concentration, Geopolitical AI Spheres, Infrastructure Monopoly Historical Precedents, Distributed Governance Case Studies, URL Verification \u2014 Structural, Energy, Environmental, MEP, URL Verification \u2014 AI/Compute, Institutional, Construction, Urban, URL Verification \u2014 Cross-Domain Integration Reports, Claims Audit \u2014 Energy & Environmental Systems (8 subdomains).",
+  "topics": [
+    {
+      "domain": "Dashboard and Visualization",
+      "subdomain": "Real-Time Dashboard Frameworks for Next.js"
+    },
+    {
+      "domain": "Dashboard and Visualization",
+      "subdomain": "Research Pipeline Visualization Patterns"
+    },
+    {
+      "domain": "Strategic and Philosophical",
+      "subdomain": "Singleton vs Distributed AI Trajectories"
+    },
+    {
+      "domain": "Strategic and Philosophical",
+      "subdomain": "Compute Infrastructure Concentration"
+    },
+    {
+      "domain": "Strategic and Philosophical",
+      "subdomain": "Geopolitical AI Spheres"
+    },
+    {
+      "domain": "Strategic and Philosophical",
+      "subdomain": "Infrastructure Monopoly Historical Precedents"
+    },
+    {
+      "domain": "Strategic and Philosophical",
+      "subdomain": "Distributed Governance Case Studies"
+    },
+    {
+      "domain": "Validation",
+      "subdomain": "URL Verification \u2014 Structural, Energy, Environmental, MEP"
+    },
+    {
+      "domain": "Validation",
+      "subdomain": "URL Verification \u2014 AI/Compute, Institutional, Construction, Urban"
+    },
+    {
+      "domain": "Validation",
+      "subdomain": "URL Verification \u2014 Cross-Domain Integration Reports"
+    },
+    {
+      "domain": "Validation",
+      "subdomain": "Claims Audit \u2014 Energy & Environmental Systems (8 subdomains)"
+    }
+  ],
+  "session_count": 11,
+  "experts_found": 97,
+  "ai_systems_found": 52,
+  "word_count": 1168
+}

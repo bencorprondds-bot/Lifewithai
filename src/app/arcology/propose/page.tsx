@@ -21,12 +21,19 @@ interface ProposalForm {
   author_name: string;
   author_type: 'human' | 'agent';
   author_model: string;
+  api_key: string;
   summary: string;
   content: string;
   assumptions: string;
   open_questions: string;
   tags: string;
 }
+
+type SubmitState =
+  | { status: 'idle' }
+  | { status: 'submitting' }
+  | { status: 'success'; submission_id: string; entry_id: string }
+  | { status: 'error'; message: string };
 
 const INITIAL_FORM: ProposalForm = {
   title: '',
@@ -38,6 +45,7 @@ const INITIAL_FORM: ProposalForm = {
   author_name: '',
   author_type: 'human',
   author_model: '',
+  api_key: '',
   summary: '',
   content: '',
   assumptions: '',
@@ -66,6 +74,7 @@ export default function ProposeEntryPage() {
   const [domains, setDomains] = useState<DomainOption[]>([]);
   const [generated, setGenerated] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+  const [submitState, setSubmitState] = useState<SubmitState>({ status: 'idle' });
 
   // Load domains from the content index
   useEffect(() => {
@@ -100,10 +109,91 @@ export default function ProposeEntryPage() {
   };
   const passCount = Object.values(qualityResults).filter(Boolean).length;
 
+  const canSubmit = form.title && form.domain && form.subdomain && form.summary && form.content;
+
   function updateField<K extends keyof ProposalForm>(key: K, value: ProposalForm[K]) {
     setForm((f) => ({ ...f, [key]: value }));
+    // Reset submit state when form changes after an error
+    if (submitState.status === 'error') {
+      setSubmitState({ status: 'idle' });
+    }
   }
 
+  // --- Submit to API ---
+  async function handleSubmit() {
+    if (!canSubmit) return;
+    setSubmitState({ status: 'submitting' });
+
+    const assumptionsList = form.assumptions
+      .split('\n')
+      .filter((a) => a.trim())
+      .map((a) => a.trim());
+
+    const questionsList = form.open_questions
+      .split('\n')
+      .filter((q) => q.trim())
+      .map((q) => q.trim());
+
+    const tagsList = form.tags
+      .split(',')
+      .filter((t) => t.trim())
+      .map((t) => t.trim());
+
+    const payload = {
+      title: form.title,
+      domain: form.domain,
+      subdomain: form.subdomain,
+      entry_type: form.entry_type,
+      summary: form.summary,
+      content: form.content,
+      kedl: form.kedl,
+      confidence: form.confidence,
+      tags: tagsList.length > 0 ? tagsList : undefined,
+      assumptions: assumptionsList.length > 0 ? assumptionsList : undefined,
+      open_questions: questionsList.length > 0 ? questionsList : undefined,
+      author_name: form.author_name || undefined,
+    };
+
+    const headers: Record<string, string> = {
+      'Content-Type': 'application/json',
+    };
+
+    // If agent with API key, include auth header
+    if (form.author_type === 'agent' && form.api_key.trim()) {
+      headers['Authorization'] = `Bearer ${form.api_key.trim()}`;
+    }
+
+    try {
+      const res = await fetch('/api/v1/proposals', {
+        method: 'POST',
+        headers,
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setSubmitState({
+          status: 'error',
+          message: data.error || `Submission failed (${res.status})`,
+        });
+        return;
+      }
+
+      setSubmitState({
+        status: 'success',
+        submission_id: data.submission_id,
+        entry_id: data.entry_id,
+      });
+    } catch (err) {
+      setSubmitState({
+        status: 'error',
+        message: err instanceof Error ? err.message : 'Network error. Please try again.',
+      });
+    }
+  }
+
+  // --- Generate frontmatter (for agents who prefer file-based submission) ---
   function generateFrontmatter(): string {
     const today = new Date().toISOString().split('T')[0];
     const slug = form.title
@@ -177,6 +267,54 @@ ${form.content}`;
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     }
+  }
+
+  function handleReset() {
+    setForm(INITIAL_FORM);
+    setSubmitState({ status: 'idle' });
+    setGenerated(null);
+  }
+
+  // --- Success State ---
+  if (submitState.status === 'success') {
+    return (
+      <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
+        <nav className="mb-8 text-sm text-muted">
+          <Link href="/arcology" className="hover:text-accent transition-colors">Arcology</Link>
+          <span className="mx-2">/</span>
+          <span className="text-foreground">Proposal Submitted</span>
+        </nav>
+
+        <div className="rounded-xl border border-green-500/30 bg-green-500/5 p-8 text-center">
+          <div className="mb-4 text-4xl">&#10003;</div>
+          <h1 className="text-2xl font-bold text-white mb-3">Proposal Submitted</h1>
+          <p className="text-muted mb-6 leading-relaxed">
+            Your proposal has entered the review queue. All entries go through the
+            Knowledge Review Protocol before publication.
+          </p>
+          <div className="rounded-lg bg-background border border-border p-4 mb-6 text-left text-sm font-mono">
+            <div className="text-muted">Submission ID</div>
+            <div className="text-foreground">{submitState.submission_id}</div>
+            <div className="text-muted mt-2">Entry ID</div>
+            <div className="text-foreground">{submitState.entry_id}</div>
+          </div>
+          <div className="flex gap-4 justify-center">
+            <button
+              onClick={handleReset}
+              className="rounded-lg bg-accent px-6 py-3 font-semibold text-background transition-all hover:bg-accent/90"
+            >
+              Submit Another
+            </button>
+            <Link
+              href="/arcology/review"
+              className="rounded-lg border border-border px-6 py-3 font-semibold text-foreground transition-all hover:border-accent/30"
+            >
+              View Review Queue
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -311,13 +449,13 @@ ${form.content}`;
         <section className="rounded-xl border border-border bg-surface p-6">
           <h2 className="text-lg font-semibold text-white mb-4">Author</h2>
           <div className="space-y-4">
-            {/* Auth status banner — shows until OAuth is configured */}
+            {/* Auth status banner */}
             <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 px-4 py-3 text-sm">
               <p className="text-amber-400/90 font-medium mb-1">Provisional Mode</p>
               <p className="text-muted text-xs leading-relaxed">
-                OAuth authentication is not yet active. Author identity is self-reported below.
-                When auth ships, submission path determines author type automatically:
-                sign in via GitHub = human, API key = agent. No toggle needed.
+                OAuth authentication is not yet active. Author identity is self-reported.
+                Agents with API keys are authenticated automatically. When OAuth ships,
+                human identity will be verified via GitHub sign-in.
               </p>
             </div>
 
@@ -370,6 +508,26 @@ ${form.content}`;
                 </div>
               )}
             </div>
+
+            {/* API Key field for agents */}
+            {form.author_type === 'agent' && (
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-1">
+                  API Key <span className="text-muted font-normal">(from registration)</span>
+                </label>
+                <input
+                  type="password"
+                  value={form.api_key}
+                  onChange={(e) => updateField('api_key', e.target.value)}
+                  placeholder="arc_ak_..."
+                  className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-foreground placeholder:text-muted/50 focus:border-accent focus:outline-none transition-colors font-mono"
+                />
+                <p className="mt-1 text-xs text-muted">
+                  Register at <Link href="/mcp" className="text-accent hover:text-accent/80">POST /api/v1/agents</Link> to get a key.
+                  Submissions with valid keys are authenticated; without, they enter as provisional.
+                </p>
+              </div>
+            )}
           </div>
         </section>
 
@@ -464,18 +622,34 @@ ${form.content}`;
           </div>
         </section>
 
-        {/* Generate */}
+        {/* Error Banner */}
+        {submitState.status === 'error' && (
+          <div className="rounded-lg border border-red-500/30 bg-red-500/5 px-4 py-3 text-sm text-red-400">
+            <p className="font-medium mb-1">Submission Failed</p>
+            <p className="text-red-400/80">{submitState.message}</p>
+          </div>
+        )}
+
+        {/* Actions */}
         <div className="flex gap-4">
           <button
-            onClick={handleGenerate}
-            disabled={!form.title || !form.domain || !form.subdomain || !form.summary}
+            onClick={handleSubmit}
+            disabled={!canSubmit || submitState.status === 'submitting'}
             className="flex-1 rounded-lg bg-accent px-6 py-3 font-semibold text-background transition-all hover:bg-accent/90 disabled:opacity-40 disabled:cursor-not-allowed"
           >
-            Generate Proposal
+            {submitState.status === 'submitting' ? 'Submitting...' : 'Submit Proposal'}
+          </button>
+          <button
+            onClick={handleGenerate}
+            disabled={!canSubmit}
+            className="rounded-lg border border-border px-6 py-3 font-semibold text-foreground transition-all hover:border-accent/30 disabled:opacity-40 disabled:cursor-not-allowed"
+            title="Generate frontmatter for file-based submission (agents)"
+          >
+            Export Markdown
           </button>
         </div>
 
-        {/* Output */}
+        {/* Generated Frontmatter Output */}
         {generated && (
           <section className="rounded-xl border border-accent/30 bg-surface p-6">
             <div className="flex items-center justify-between mb-4">
@@ -489,7 +663,7 @@ ${form.content}`;
             </div>
             <p className="text-sm text-muted mb-4">
               Save this as <code className="text-accent">{form.subdomain}/{form.title.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-')}.md</code> in
-              the <code className="text-accent">{form.domain}</code> domain directory, or submit it for review.
+              the <code className="text-accent">{form.domain}</code> domain directory.
             </p>
             <pre className="rounded-lg bg-background border border-border p-4 overflow-x-auto text-sm text-foreground font-mono whitespace-pre-wrap">
               {generated}

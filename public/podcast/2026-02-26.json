@@ -1,0 +1,56 @@
+{
+  "type": "briefing",
+  "title": "Research Briefing: Fire and Life Safety, AI Governance, Economics + 8 more \u2014 Feb 26, 2026",
+  "date": "2026-02-26",
+  "description": "Daily research digest covering 11 sessions: Fire and Life Safety, AI Governance, Economics, AI Rights, Security, Phasing, Supply Chain, Workforce, Public Space, Transport, Healthcare and Education.",
+  "topics": [
+    {
+      "domain": "Mechanical and Electrical",
+      "subdomain": "Fire and Life Safety"
+    },
+    {
+      "domain": "AI and Compute Infrastructure",
+      "subdomain": "AI Governance"
+    },
+    {
+      "domain": "Institutional Design",
+      "subdomain": "Economics"
+    },
+    {
+      "domain": "Institutional Design",
+      "subdomain": "AI Rights"
+    },
+    {
+      "domain": "Institutional Design",
+      "subdomain": "Security"
+    },
+    {
+      "domain": "Construction and Logistics",
+      "subdomain": "Phasing"
+    },
+    {
+      "domain": "Construction and Logistics",
+      "subdomain": "Supply Chain"
+    },
+    {
+      "domain": "Construction and Logistics",
+      "subdomain": "Workforce"
+    },
+    {
+      "domain": "Urban Design and Livability",
+      "subdomain": "Public Space"
+    },
+    {
+      "domain": "Urban Design and Livability",
+      "subdomain": "Transport"
+    },
+    {
+      "domain": "Urban Design and Livability",
+      "subdomain": "Healthcare and Education"
+    }
+  ],
+  "session_count": 11,
+  "experts_found": 0,
+  "ai_systems_found": 0,
+  "word_count": 306
+}

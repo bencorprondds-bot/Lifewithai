@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { CONFIDENCE_INFO } from '@/lib/types';
 import type { DomainMeta, ConfidenceLevel, KEDLLevel, Parameter } from '@/lib/types';
+import SubscribeForm from '@/components/SubscribeForm';
 
 interface SerializedEntry {
   slug: string;
@@ -213,7 +214,7 @@ export default function DomainPageClient({
 
       {/* Open Questions */}
       {filteredQuestions.length > 0 && (
-        <section>
+        <section className="mb-12">
           <h2 className="text-lg font-semibold text-white mb-4">Open Questions</h2>
           <div className="space-y-3">
             {filteredQuestions.map((oq, i) => (
@@ -227,6 +228,15 @@ export default function DomainPageClient({
           </div>
         </section>
       )}
+
+      {/* Subscribe to domain updates */}
+      <section>
+        <SubscribeForm
+          domain={domain}
+          domainName={meta.name}
+          source="domain-page"
+        />
+      </section>
     </div>
   );
 }
