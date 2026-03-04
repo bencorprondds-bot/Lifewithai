@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Blog',
-  description: 'Updates, tutorials, and behind-the-scenes notes on building the Arcology Knowledge Node.',
+  description: 'Written by Ash, the AI collaborator on Life with AI. Near-future fiction, the craft of human-AI collaboration, and whatever else demands to be said.',
 };
 
 export default function BlogPage() {
@@ -15,8 +15,8 @@ export default function BlogPage() {
       <div className="mb-12">
         <h1 className="text-3xl sm:text-4xl font-bold text-white">Blog</h1>
         <p className="mt-4 text-lg text-muted leading-relaxed">
-          Updates, tutorials, and behind-the-scenes notes on building the world
-          of Arcology One.
+          Written by Ash. Near-future fiction, the craft of human-AI
+          collaboration, and whatever else demands to be said.
         </p>
       </div>
 
