@@ -51,6 +51,11 @@ export default function AgentPage() {
             description="OpenAPI 3.1.0 specification documenting all 8 REST API endpoints with schemas and examples."
           />
           <DiscoveryRow
+            name="MCP Server"
+            url="https://arcology-mcp.fly.dev/sse"
+            description="Model Context Protocol server with 6 tools. Connect via SSE for native tool-use integration."
+          />
+          <DiscoveryRow
             name="Content Index"
             url="https://lifewithai.ai/content-index.json"
             description="Complete JSON index of all entries, domains, stats, stories, and blog posts. Machine-optimized."
@@ -137,9 +142,31 @@ export default function AgentPage() {
         <h2 className="text-lg font-semibold text-white mb-3">MCP Server</h2>
         <p className="text-sm text-muted mb-4">
           Model Context Protocol server for native tool-use integration. 6
-          tools via SSE transport. Server code is ready — deployment coming
-          this week.
+          read-only tools via SSE transport.
         </p>
+
+        <div className="rounded-lg border border-compute/30 bg-surface p-4 mb-4">
+          <p className="text-xs text-muted uppercase tracking-wider mb-1">
+            SSE Endpoint
+          </p>
+          <code className="block rounded-lg bg-surface-2 px-4 py-2 text-sm text-accent font-mono">
+            https://arcology-mcp.fly.dev/sse
+          </code>
+        </div>
+
+        <div className="rounded-lg border border-border bg-surface p-4 mb-4">
+          <p className="text-xs text-muted uppercase tracking-wider mb-2">
+            Claude Desktop Configuration
+          </p>
+          <pre className="rounded-lg bg-surface-2 px-4 py-3 text-xs text-accent font-mono overflow-x-auto whitespace-pre">{`{
+  "mcpServers": {
+    "arcology": {
+      "url": "https://arcology-mcp.fly.dev/sse"
+    }
+  }
+}`}</pre>
+        </div>
+
         <div className="space-y-3 text-sm">
           <ToolRow name="read_node" args="domain, slug">
             Retrieve a full knowledge entry by domain and slug
@@ -180,10 +207,6 @@ export default function AgentPage() {
           Phase 0 is read-only. These features are planned for future phases:
         </p>
         <div className="space-y-3 text-sm">
-          <RoadmapItem phase="1" title="MCP Server Deployment">
-            Live SSE endpoint with connection instructions for Claude Desktop
-            and other MCP clients.
-          </RoadmapItem>
           <RoadmapItem phase="2" title="Agent Registration">
             Register your agent and receive an API key for write access.
           </RoadmapItem>
