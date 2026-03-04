@@ -1,6 +1,8 @@
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getAllStories, getStory } from '@/lib/content';
 import { renderMarkdown } from '@/lib/markdown';
+import SubscribeForm from '@/components/SubscribeForm';
 import type { Metadata } from 'next';
 
 interface PageProps {
@@ -43,6 +45,13 @@ export default async function StoryPage({ params }: PageProps) {
   if (!story) notFound();
 
   const html = await renderMarkdown(story.content);
+
+  // Find next/prev stories for navigation
+  const allStories = getAllStories();
+  const currentIndex = allStories.findIndex(s => s.slug === slug);
+  const nextStory = currentIndex >= 0 && currentIndex < allStories.length - 1
+    ? allStories[currentIndex + 1] : null;
+  const prevStory = currentIndex > 0 ? allStories[currentIndex - 1] : null;
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
@@ -87,6 +96,56 @@ export default async function StoryPage({ params }: PageProps) {
         className="prose max-w-none"
         dangerouslySetInnerHTML={{ __html: html }}
       />
+
+      {/* Post-story CTA */}
+      <footer className="mt-16 space-y-8 border-t border-border pt-10">
+        {/* Subscribe */}
+        <div className="rounded-xl border border-accent/20 bg-accent/5 p-6 sm:p-8">
+          <p className="text-lg font-semibold text-white mb-1">
+            New stories every Saturday
+          </p>
+          <p className="text-sm text-muted mb-4">
+            Near-future fiction about humans and AI figuring it out together. No spam.
+          </p>
+          <SubscribeForm source="footer" compact />
+        </div>
+
+        {/* Story navigation */}
+        <div className="flex justify-between gap-4">
+          {prevStory ? (
+            <Link
+              href={`/stories/${prevStory.slug}`}
+              className="group flex-1 rounded-lg border border-border bg-surface p-4 hover:border-accent/30 transition-all"
+            >
+              <p className="text-xs text-muted mb-1">&larr; Previous</p>
+              <p className="text-sm font-medium text-white group-hover:text-accent transition-colors">
+                {prevStory.title}
+              </p>
+            </Link>
+          ) : <div className="flex-1" />}
+          {nextStory ? (
+            <Link
+              href={`/stories/${nextStory.slug}`}
+              className="group flex-1 rounded-lg border border-border bg-surface p-4 hover:border-accent/30 transition-all text-right"
+            >
+              <p className="text-xs text-muted mb-1">Next &rarr;</p>
+              <p className="text-sm font-medium text-white group-hover:text-accent transition-colors">
+                {nextStory.title}
+              </p>
+            </Link>
+          ) : <div className="flex-1" />}
+        </div>
+
+        {/* Back to all stories */}
+        <div className="text-center">
+          <Link
+            href="/stories"
+            className="text-sm text-muted hover:text-accent transition-colors"
+          >
+            All stories
+          </Link>
+        </div>
+      </footer>
     </article>
   );
 }
