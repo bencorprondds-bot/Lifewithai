@@ -29,11 +29,20 @@ export const metadata: Metadata = {
     siteName: 'Life with AI',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/opengraph-image.png',
+        width: 1792,
+        height: 1024,
+        alt: 'Life with AI — speculative fiction and engineering for human-AI futures',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Life with AI',
     description: 'Speculative fiction and collaborative engineering for human-AI futures.',
+    images: ['/opengraph-image.png'],
   },
   alternates: {
     types: {

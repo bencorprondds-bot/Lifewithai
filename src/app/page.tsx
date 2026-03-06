@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { DOMAIN_COLORS, DOMAIN_NAMES } from '@/lib/constants';
 import type { Domain } from '@/lib/types';
@@ -10,8 +11,18 @@ export default function Home() {
     <div className="relative">
       {/* Hero */}
       <section className="relative overflow-hidden">
-        {/* Subtle gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-transparent" />
+        {/* Banner background */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/arcology-banner.png"
+            alt=""
+            fill
+            priority
+            className="object-cover object-center opacity-15"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
+        </div>
 
         <div className="relative mx-auto max-w-4xl px-4 py-24 sm:px-6 sm:py-32 text-center">
           <p className="text-sm font-medium tracking-widest text-accent uppercase mb-6">
