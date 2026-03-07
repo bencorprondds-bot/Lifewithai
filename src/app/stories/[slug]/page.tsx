@@ -53,8 +53,42 @@ export default async function StoryPage({ params }: PageProps) {
     ? allStories[currentIndex + 1] : null;
   const prevStory = currentIndex > 0 ? allStories[currentIndex - 1] : null;
 
+  // JSON-LD structured data
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ShortStory',
+    name: story.title,
+    headline: story.subtitle ? `${story.title}: ${story.subtitle}` : story.title,
+    author: {
+      '@type': 'Person',
+      name: 'SB Corvus',
+      url: 'https://lifewithai.ai/about',
+    },
+    datePublished: story.published,
+    description: story.summary || '',
+    url: `https://lifewithai.ai/stories/${slug}`,
+    genre: ['speculative fiction', 'science fiction', 'AI fiction'],
+    wordCount: story.word_count,
+    isPartOf: {
+      '@type': 'CreativeWorkSeries',
+      name: story.series,
+      url: 'https://lifewithai.ai/stories',
+    },
+    keywords: story.themes?.join(', '),
+    inLanguage: 'en',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Life with AI',
+      url: 'https://lifewithai.ai',
+    },
+  };
+
   return (
     <article className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Header */}
       <header className="mb-10">
         <p className="text-sm font-medium tracking-widest text-accent uppercase mb-3">

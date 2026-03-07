@@ -43,8 +43,43 @@ export default async function KnowledgeEntryPage({ params }: PageProps) {
   const kedlInfo = KEDL_INFO[entry.kedl as KEDLLevel];
   const confInfo = CONFIDENCE_INFO[entry.confidence as ConfidenceLevel];
 
+  // JSON-LD structured data
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'TechArticle',
+    name: entry.title,
+    headline: entry.title,
+    description: entry.summary,
+    url: `https://lifewithai.ai/arcology/${domain}/${slugStr}`,
+    dateModified: entry.updated,
+    author: entry.authors.map(a => ({
+      '@type': a.type === 'agent' ? 'SoftwareApplication' : 'Person',
+      name: a.id,
+    })),
+    about: {
+      '@type': 'Thing',
+      name: domainMeta?.name || domain,
+    },
+    keywords: entry.tags.join(', '),
+    inLanguage: 'en',
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'Arcology Knowledge Node',
+      url: 'https://lifewithai.ai/arcology',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Life with AI',
+      url: 'https://lifewithai.ai',
+    },
+  };
+
   return (
     <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Breadcrumb */}
       <nav className="mb-8 text-sm text-muted">
         <Link href="/arcology" className="hover:text-accent transition-colors">Arcology</Link>

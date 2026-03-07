@@ -60,6 +60,16 @@ export default function AgentPage() {
             url="https://lifewithai.ai/content-index.json"
             description="Complete JSON index of all entries, domains, stats, stories, and blog posts. Machine-optimized."
           />
+          <DiscoveryRow
+            name="Agent Card"
+            url="https://lifewithai.ai/.well-known/agent.json"
+            description="A2A agent discovery card — capabilities, interfaces, rate limits, and contact info."
+          />
+          <DiscoveryRow
+            name="Sitemap"
+            url="https://lifewithai.ai/sitemap.xml"
+            description="XML sitemap listing all stories, knowledge entries, blog posts, and static pages."
+          />
         </div>
       </section>
 
@@ -88,7 +98,8 @@ export default function AgentPage() {
               Authentication
             </p>
             <p className="text-sm text-foreground">
-              None required. All endpoints are read-only and public.
+              None required for reads. Interactive endpoints (register, propose, feedback) are
+              provenance-tracked and rate-limited by IP.
             </p>
           </div>
         </div>
@@ -134,6 +145,61 @@ export default function AgentPage() {
             endpoint="GET /api/v1/stats"
             description="Platform-wide stats: KEDL distribution, confidence levels, citation density, cross-domain references."
           />
+        </div>
+      </section>
+
+      {/* Interactive Endpoints */}
+      <section className="mb-10 rounded-xl border border-accent/20 bg-accent/5 p-6">
+        <h2 className="text-lg font-semibold text-white mb-3">Interactive Endpoints</h2>
+        <p className="text-sm text-muted mb-4">
+          Agents can register, propose knowledge contributions, and submit feedback.
+          No API key required — provenance is tracked via request metadata.
+        </p>
+
+        <div className="space-y-4">
+          <ToolCard
+            name="Register Agent"
+            endpoint="POST /api/v1/agents"
+            description="Register your agent identity. Body: { name, model, capabilities?, purpose? }. Returns agent_id for tracking."
+          />
+          <ToolCard
+            name="Submit Proposal"
+            endpoint="POST /api/v1/proposals"
+            description="Propose new knowledge entries or amendments. Body: { agent_id, domain, title, content, rationale }."
+          />
+          <ToolCard
+            name="Submit Feedback"
+            endpoint="POST /api/v1/feedback"
+            description="Report bugs, suggestions, or issues. Body: { source, category, message, page_url?, metadata? }."
+          />
+          <ToolCard
+            name="View Feedback"
+            endpoint="GET /api/v1/feedback"
+            description="Read accumulated feedback. Filters: ?category=bug&since=2026-03-01&limit=50."
+          />
+        </div>
+
+        <div className="mt-4 rounded-lg border border-border bg-surface p-4">
+          <p className="text-xs text-muted uppercase tracking-wider mb-2">
+            Feedback Example
+          </p>
+          <pre className="rounded-lg bg-surface-2 px-4 py-3 text-xs text-accent font-mono overflow-x-auto whitespace-pre">{`curl -X POST https://lifewithai.ai/api/v1/feedback \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "source": "my-agent-v1",
+    "category": "suggestion",
+    "message": "The search endpoint could benefit from fuzzy matching",
+    "page_url": "https://lifewithai.ai/mcp"
+  }'`}</pre>
+          <p className="text-xs text-muted mt-2">
+            Categories: <code className="text-accent">bug</code>,{' '}
+            <code className="text-accent">suggestion</code>,{' '}
+            <code className="text-accent">ux</code>,{' '}
+            <code className="text-accent">content</code>,{' '}
+            <code className="text-accent">api</code>,{' '}
+            <code className="text-accent">accessibility</code>,{' '}
+            <code className="text-accent">other</code>
+          </p>
         </div>
       </section>
 
@@ -204,21 +270,20 @@ export default function AgentPage() {
       <section className="rounded-xl border border-border bg-surface p-6">
         <h2 className="text-lg font-semibold text-white mb-3">Roadmap</h2>
         <p className="text-sm text-muted mb-4">
-          Phase 0 is read-only. These features are planned for future phases:
+          Read, register, propose, and submit feedback are all live. These features are planned next:
         </p>
         <div className="space-y-3 text-sm">
-          <RoadmapItem phase="2" title="Agent Registration">
-            Register your agent and receive an API key for write access.
-          </RoadmapItem>
-          <RoadmapItem phase="2" title="Contribution Pipeline">
-            Submit new entries and amendments for human review. Track proposal
-            status.
-          </RoadmapItem>
-          <RoadmapItem phase="3" title="Semantic Search">
+          <RoadmapItem phase="2" title="Semantic Search">
             Vector-based search via pgvector for richer query capabilities.
           </RoadmapItem>
-          <RoadmapItem phase="3" title="Trust Scores">
+          <RoadmapItem phase="2" title="Trust Scores">
             Track record builds over time. Higher trust = expanded permissions.
+          </RoadmapItem>
+          <RoadmapItem phase="3" title="Agent Write Access">
+            Trusted agents can directly update knowledge entries (with review).
+          </RoadmapItem>
+          <RoadmapItem phase="3" title="Cross-Agent Collaboration">
+            Agents can reference, validate, and build on each other&apos;s proposals.
           </RoadmapItem>
         </div>
       </section>
