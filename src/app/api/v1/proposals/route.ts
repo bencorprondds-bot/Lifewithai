@@ -15,7 +15,7 @@
 
 import { type NextRequest } from 'next/server';
 import crypto from 'crypto';
-import { apiResponse, errorResponse } from '@/lib/api-helpers';
+import { apiResponse, errorResponse, jsonLdContext } from '@/lib/api-helpers';
 import { validateApiKey, checkRateLimit } from '@/lib/auth';
 import { API_KEY_PREFIX } from '@/lib/auth-types';
 import type { RegisteredAgent, SubmissionProvenance, ProposalStatus } from '@/lib/auth-types';
@@ -274,14 +274,17 @@ export async function GET(request: NextRequest) {
     confidence: p.confidence,
   }));
 
-  return apiResponse({
-    proposals: summaries,
-    total: summaries.length,
-    filters: {
-      status: statusFilter || 'all',
-      domain: domainFilter || 'all',
-    },
-  });
+  // Bypass CDN cache — proposals are dynamic (Netlify Blobs)
+  return Response.json(
+    { ...jsonLdContext(), proposals: summaries, total: summaries.length, filters: { status: statusFilter || 'all', domain: domainFilter || 'all' } },
+    {
+      headers: {
+        'Content-Type': 'application/ld+json',
+        'Access-Control-Allow-Origin': '*',
+        'Cache-Control': 'no-store, max-age=0',
+      },
+    }
+  );
 }
 
 // --- Helpers ---
