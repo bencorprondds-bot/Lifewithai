@@ -6,7 +6,7 @@
 //                        Trust scores computed live from proposal history.
 
 import { type NextRequest } from 'next/server';
-import { apiResponse, errorResponse } from '@/lib/api-helpers';
+import { apiResponse, errorResponse, jsonLdContext } from '@/lib/api-helpers';
 import { generateApiKey, computeTrustScore } from '@/lib/auth';
 import type { RegisteredAgent, AgentPermissions, SubmissionProvenance } from '@/lib/auth-types';
 import { DEFAULT_RATE_LIMITS, DEFAULT_TRUST_SCORE } from '@/lib/auth-types';
@@ -65,10 +65,17 @@ export async function GET() {
     };
   });
 
-  return apiResponse({
-    agents: publicAgents,
-    total: publicAgents.length,
-  });
+  // Bypass CDN cache — agents are dynamic (Netlify Blobs)
+  return Response.json(
+    { ...jsonLdContext(), agents: publicAgents, total: publicAgents.length },
+    {
+      headers: {
+        'Content-Type': 'application/ld+json',
+        'Access-Control-Allow-Origin': '*',
+        'Cache-Control': 'no-store, max-age=0',
+      },
+    }
+  );
 }
 
 // --- POST: Register a new agent (open registration) ---
