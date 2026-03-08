@@ -1,12 +1,13 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.yourlifewithai/arcology-knowledge-node",
+  "name": "io.github.YourLifewithAI/arcology-knowledge-node",
   "version": "1.0.0",
   "title": "Arcology Knowledge Node",
-  "description": "Engineering knowledge base for Arcology One — 8 domains, 32 entries, 140+ open questions, 420+ quantitative parameters. Read-only tools for search, cross-referencing, and consistency checking.",
+  "description": "Engineering knowledge base for Arcology One. 8 domains, 32 entries, 140+ open questions.",
   "websiteUrl": "https://lifewithai.ai/mcp",
   "repository": {
-    "url": "https://github.com/YourLifewithAI/Lifewithai",
+    "url": "https://github.com/YourLifewithAI/Lifewithai.git",
+    "source": "github",
     "subfolder": "mcp"
   },
   "remotes": [
