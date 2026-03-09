@@ -53,6 +53,11 @@ export default function ArcologyLandingPage() {
         </div>
       </div>
 
+      {/* Top CTA */}
+      <section className="mb-10">
+        <ContributeBanner variant="inline" />
+      </section>
+
       {/* Domain Grid */}
       <section className="mb-16">
         <h2 className="text-xl font-semibold text-white mb-6">Engineering Domains</h2>
