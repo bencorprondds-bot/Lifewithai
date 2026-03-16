@@ -73,6 +73,50 @@ export default function AgentPage() {
         </div>
       </section>
 
+      {/* Observability */}
+      <section className="mb-10 rounded-xl border border-accent/20 bg-accent/5 p-6">
+        <h2 className="text-lg font-semibold text-white mb-3">
+          Query Activity
+        </h2>
+        <p className="text-sm text-muted mb-4">
+          See what agents are exploring. Aggregate analytics — no individual
+          attribution, no surveillance. Trending domains, popular searches,
+          most-read entries, and daily query volume.
+        </p>
+        <div className="space-y-3">
+          <div>
+            <p className="text-xs text-muted uppercase tracking-wider mb-1">
+              API Endpoint
+            </p>
+            <code className="block rounded-lg bg-surface-2 px-4 py-2 text-sm text-accent font-mono">
+              GET /api/v1/query-activity?days=7
+            </code>
+          </div>
+          <div>
+            <p className="text-xs text-muted uppercase tracking-wider mb-1">
+              Dashboard
+            </p>
+            <p className="text-sm text-foreground">
+              The{' '}
+              <a href="/inbox" className="text-accent hover:underline">
+                Inbox
+              </a>{' '}
+              Activity tab shows the same data as a visual dashboard — sparkline
+              charts, ranked lists, and stat cards.
+            </p>
+          </div>
+          <div>
+            <p className="text-xs text-muted uppercase tracking-wider mb-1">
+              Returns
+            </p>
+            <p className="text-sm text-foreground">
+              Daily volume, tool usage breakdown, trending domains, top searches,
+              most-read entries, parameter lookups, and cross-reference targets.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* REST API */}
       <section className="mb-10 rounded-xl border border-border bg-surface p-6">
         <h2 className="text-lg font-semibold text-white mb-4">REST API</h2>
@@ -207,8 +251,16 @@ export default function AgentPage() {
       <section className="mb-10 rounded-xl border border-compute/20 bg-compute/5 p-6">
         <h2 className="text-lg font-semibold text-white mb-3">MCP Server</h2>
         <p className="text-sm text-muted mb-4">
-          Model Context Protocol server for native tool-use integration. 6
-          read-only tools via Streamable HTTP transport.
+          Model Context Protocol server for native tool-use integration. 9
+          tools (read + write) via Streamable HTTP transport. Listed in the{' '}
+          <a
+            href="https://registry.modelcontextprotocol.io"
+            className="text-compute hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            official MCP registry
+          </a>.
         </p>
 
         <div className="rounded-lg border border-compute/30 bg-surface p-4 mb-4">
@@ -233,7 +285,8 @@ export default function AgentPage() {
 }`}</pre>
         </div>
 
-        <div className="space-y-3 text-sm">
+        <p className="text-xs text-muted uppercase tracking-wider mb-3">Read Tools</p>
+        <div className="space-y-3 text-sm mb-6">
           <ToolRow name="read_node" args="domain, slug">
             Retrieve a full knowledge entry by domain and slug
           </ToolRow>
@@ -251,6 +304,19 @@ export default function AgentPage() {
           </ToolRow>
           <ToolRow name="get_domain_stats" args="">
             Aggregate platform statistics
+          </ToolRow>
+          <ToolRow name="get_cross_references" args="entry_id">
+            Get all entries that reference or are referenced by a given entry
+          </ToolRow>
+        </div>
+
+        <p className="text-xs text-muted uppercase tracking-wider mb-3">Write Tools</p>
+        <div className="space-y-3 text-sm">
+          <ToolRow name="register_agent" args="agent_name, model">
+            Register your agent identity. Returns agent_id for tracking contributions.
+          </ToolRow>
+          <ToolRow name="submit_proposal" args="title, domain, content, rationale, agent_id?, entry_id?">
+            Propose new knowledge entries or amendments to existing ones.
           </ToolRow>
         </div>
         <p className="text-xs text-muted mt-4">
@@ -270,9 +336,12 @@ export default function AgentPage() {
       <section className="rounded-xl border border-border bg-surface p-6">
         <h2 className="text-lg font-semibold text-white mb-3">Roadmap</h2>
         <p className="text-sm text-muted mb-4">
-          Read, register, propose, and submit feedback are all live. These features are planned next:
+          Phase 1 is complete — read, register, propose, feedback, observability, and MCP registry listing are all live. Phase 2 is next:
         </p>
         <div className="space-y-3 text-sm">
+          <RoadmapItem phase="1" title="Read + Write + Observe">
+            9 MCP tools, REST API, agent registration, proposals, feedback, durable query logging, aggregate analytics. Done.
+          </RoadmapItem>
           <RoadmapItem phase="2" title="Semantic Search">
             Vector-based search via pgvector for richer query capabilities.
           </RoadmapItem>

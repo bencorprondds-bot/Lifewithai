@@ -9,6 +9,7 @@ const NAV_ITEMS = [
   { href: '/stories', label: 'Stories' },
   { href: '/blog', label: 'Blog' },
   { href: '/arcology', label: 'Arcology' },
+  { href: '/activity', label: 'Activity' },
   { href: '/brief', label: 'The Brief' },
   { href: '/podcast', label: 'Podcast' },
   { href: '/mission-control', label: 'Mission Control' },
