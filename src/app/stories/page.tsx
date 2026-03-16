@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getAllStories } from '@/lib/content';
+import { TimelineView } from '@/components/timeline/TimelineView';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -32,8 +33,9 @@ export default function StoriesPage() {
   });
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
-      <div className="mb-12">
+    <div>
+      {/* Page header — constrained width */}
+      <div className="mx-auto max-w-3xl px-4 pt-16 pb-10 sm:px-6">
         <p className="text-sm font-medium tracking-widest text-accent uppercase mb-3">
           The Anthology
         </p>
@@ -46,6 +48,14 @@ export default function StoriesPage() {
           minds who build it, govern it, and call it home.
         </p>
       </div>
+
+      {/* Timeline — full width, breaks out of max-w-3xl */}
+      <div className="w-full mb-16" style={{ background: '#0a0a0f' }}>
+        <TimelineView stories={stories} />
+      </div>
+
+      {/* Story list — constrained width */}
+      <div className="mx-auto max-w-3xl px-4 pb-16 sm:px-6">
 
       {stories.length === 0 ? (
         <div className="rounded-xl border border-border bg-surface p-10 text-center">
@@ -107,6 +117,7 @@ export default function StoriesPage() {
           })}
         </div>
       )}
+      </div>
     </div>
   );
 }
