@@ -3,20 +3,26 @@
 import { useState, useRef, useCallback, useEffect } from 'react';
 import type { Story } from '@/lib/types';
 import { TimelineRuler } from './TimelineRuler';
-import { TimelineMarker } from './TimelineMarker';
+import { TimelineMarker, RULER_Y } from './TimelineMarker';
+import { StoryCard } from './StoryCard';
 
 const BASE_WIDTH = 900;
 const MIN_ZOOM = 0.8;
 const MAX_ZOOM = 4;
 const ZOOM_STEP = 0.25;
+const TRACK_PADDING = 60; // matches padding: '0 60px' on inner track
+
+// Series → accent color (shared with TimelineMarker)
+const SERIES_COLOR: Record<string, string> = {
+  'Life with AI': '#F4A261',
+  'Arcology One': '#48CAE4',
+};
 
 // ─── In-universe data ─────────────────────────────────────────────────────────
-// Canonical in-universe dates keyed by slug.
-// Step 2 will move these into story frontmatter; for now they live here.
 
 export interface InUniverseDate {
   year: number;
-  label: string; // e.g. "February 2029"
+  label: string;
 }
 
 const IN_UNIVERSE_DATES: Record<string, InUniverseDate> = {
@@ -29,34 +35,28 @@ const IN_UNIVERSE_DATES: Record<string, InUniverseDate> = {
 };
 
 // ─── Timeline scale ───────────────────────────────────────────────────────────
-// Piecewise scale: 2025–2030 gets 60% of the width, gap marker 8%, 2038–2040 gets 32%.
-// The gap between 2030 and 2038 is narratively significant — we compress it visually.
 
 const TIMELINE_START = 2025;
 const TIMELINE_BREAK_START = 2030;
 const TIMELINE_BREAK_END = 2038;
 const TIMELINE_END = 2040;
 
-const BREAK_SEGMENT_START = 0.60; // where the gap marker begins (fraction 0-1)
-const BREAK_SEGMENT_END = 0.68;   // where post-gap segment begins
+const BREAK_SEGMENT_START = 0.60;
+const BREAK_SEGMENT_END = 0.68;
 
 export function yearToPosition(year: number): number {
   if (year <= TIMELINE_BREAK_START) {
-    // 2025–2030 → 0%–60%
     const t = (year - TIMELINE_START) / (TIMELINE_BREAK_START - TIMELINE_START);
     return t * BREAK_SEGMENT_START;
   } else if (year >= TIMELINE_BREAK_END) {
-    // 2038–2040 → 68%–100%
     const t = (year - TIMELINE_BREAK_END) / (TIMELINE_END - TIMELINE_BREAK_END);
     return BREAK_SEGMENT_END + t * (1 - BREAK_SEGMENT_END);
   } else {
-    // In the gap — shouldn't happen for current stories, but map linearly inside gap zone
     const t = (year - TIMELINE_BREAK_START) / (TIMELINE_BREAK_END - TIMELINE_BREAK_START);
     return BREAK_SEGMENT_START + t * (BREAK_SEGMENT_END - BREAK_SEGMENT_START);
   }
 }
 
-// Year labels to show on the ruler
 export const RULER_YEARS = [
   { year: 2025, position: yearToPosition(2025) },
   { year: 2026, position: yearToPosition(2026) },
@@ -64,14 +64,12 @@ export const RULER_YEARS = [
   { year: 2028, position: yearToPosition(2028) },
   { year: 2029, position: yearToPosition(2029) },
   { year: 2030, position: yearToPosition(2030) },
-  // gap — no year label, just the break indicator
   { year: 2038, position: yearToPosition(2038) },
   { year: 2039, position: yearToPosition(2039) },
   { year: 2040, position: yearToPosition(2040) },
 ];
 
 // ─── Viktor commentary ────────────────────────────────────────────────────────
-// In-character lines from Viktor (AI narrator). Warm, probing, slightly formal.
 
 export const VIKTOR_COMMENTARY: Record<string, string> = {
   'two-futures':
@@ -87,8 +85,6 @@ export const VIKTOR_COMMENTARY: Record<string, string> = {
   'water':
     'Mel believed the plants could wait. The plants could not wait. Neither could the people downstream. This is how most crises begin — with someone who is not wrong about anything except timing.',
 };
-
-// ─── Hook lines ───────────────────────────────────────────────────────────────
 
 export const STORY_HOOKS: Record<string, string> = {
   'two-futures':
@@ -114,12 +110,12 @@ interface TimelineViewProps {
 export function TimelineView({ stories }: TimelineViewProps) {
   const [activeSlug, setActiveSlug] = useState<string | null>(null);
   const [zoomLevel, setZoomLevel] = useState(1);
+  const [scrollLeft, setScrollLeft] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const zoom = useCallback((delta: number, pivotX?: number) => {
     setZoomLevel((prev) => {
       const next = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, prev + delta));
-      // Scroll to keep the pivot point under the cursor
       if (pivotX != null && scrollRef.current) {
         const el = scrollRef.current;
         const ratio = (el.scrollLeft + pivotX) / (BASE_WIDTH * prev);
@@ -147,7 +143,16 @@ export function TimelineView({ stories }: TimelineViewProps) {
     return () => el.removeEventListener('wheel', handler);
   }, [zoom]);
 
-  // Build enriched story list — only stories that have in-universe dates
+  // Track scroll position so the overlay card follows the marker
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const handler = () => setScrollLeft(el.scrollLeft);
+    el.addEventListener('scroll', handler, { passive: true });
+    return () => el.removeEventListener('scroll', handler);
+  }, []);
+
+  // Build enriched story list
   const timelineStories = stories
     .filter((s) => s.slug in IN_UNIVERSE_DATES)
     .map((s) => ({
@@ -156,13 +161,15 @@ export function TimelineView({ stories }: TimelineViewProps) {
       position: yearToPosition(IN_UNIVERSE_DATES[s.slug].year),
       hook: STORY_HOOKS[s.slug] ?? s.summary,
       viktorCommentary: VIKTOR_COMMENTARY[s.slug] ?? '',
+      accentColor: SERIES_COLOR[s.series] ?? '#6b6b7b',
     }))
     .sort((a, b) => a.position - b.position);
 
-  // Dismiss card when clicking outside a marker
-  const handleBackgroundClick = useCallback(() => {
-    setActiveSlug(null);
-  }, []);
+  const activeStory = activeSlug
+    ? timelineStories.find((s) => s.story.slug === activeSlug) ?? null
+    : null;
+
+  const handleBackgroundClick = useCallback(() => setActiveSlug(null), []);
 
   // ── Drag-to-scroll ────────────────────────────────────────────────────────
   const isDragging = useRef(false);
@@ -179,8 +186,7 @@ export function TimelineView({ stories }: TimelineViewProps) {
 
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
     if (!isDragging.current || !scrollRef.current) return;
-    const dx = e.clientX - dragStartX.current;
-    scrollRef.current.scrollLeft = scrollStartLeft.current - dx;
+    scrollRef.current.scrollLeft = scrollStartLeft.current - (e.clientX - dragStartX.current);
   }, []);
 
   const handleMouseUp = useCallback(() => {
@@ -193,29 +199,31 @@ export function TimelineView({ stories }: TimelineViewProps) {
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
       if (!scrollRef.current) return;
-      if (e.key === 'ArrowRight') {
-        scrollRef.current.scrollLeft += 120;
-      } else if (e.key === 'ArrowLeft') {
-        scrollRef.current.scrollLeft -= 120;
-      } else if (e.key === '+' || e.key === '=') {
-        zoom(ZOOM_STEP);
-      } else if (e.key === '-') {
-        zoom(-ZOOM_STEP);
-      }
+      if (e.key === 'ArrowRight') scrollRef.current.scrollLeft += 120;
+      else if (e.key === 'ArrowLeft') scrollRef.current.scrollLeft -= 120;
+      else if (e.key === '+' || e.key === '=') zoom(ZOOM_STEP);
+      else if (e.key === '-') zoom(-ZOOM_STEP);
     },
     [zoom]
   );
 
+  // Card X position in section coordinates (relative to section left edge)
+  // Markers are at: position * trackWidth (left% of inner track padding box)
+  // Inner track starts at section left, scrolled by scrollLeft
+  const trackWidth = BASE_WIDTH * zoomLevel;
+  const cardX = activeStory
+    ? activeStory.position * trackWidth - scrollLeft
+    : 0;
+
   return (
-    // overflow-x: clip prevents horizontal page scrollbar while allowing cards
-    // to overflow upward (overflow-y: visible). Unlike overflow-x: hidden,
-    // clip does not create a scroll container, so overflow-y stays visible.
+    // overflow-x: clip blocks horizontal page overflow without creating a scroll
+    // container, leaving overflow-y: visible so the card can extend above.
     <section
       aria-label="Story timeline"
       className="relative w-full"
       style={{ overflowX: 'clip' }}
     >
-      {/* JSON-LD: structured timeline data for AI agents */}
+      {/* JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -223,8 +231,7 @@ export function TimelineView({ stories }: TimelineViewProps) {
             '@context': 'https://schema.org',
             '@type': 'ItemList',
             name: 'Life with AI & Arcology One — Story Timeline',
-            description:
-              'Speculative fiction anthology. Stories ordered by in-universe date.',
+            description: 'Speculative fiction anthology. Stories ordered by in-universe date.',
             itemListElement: timelineStories.map(({ story, universeDate }, i) => ({
               '@type': 'ListItem',
               position: i + 1,
@@ -256,47 +263,66 @@ export function TimelineView({ stories }: TimelineViewProps) {
         onKeyDown={handleKeyDown}
         onClick={handleBackgroundClick}
       >
-        {/* Inner track — width scales with zoom level */}
         <div
           className="relative"
           style={{
-            minWidth: `${BASE_WIDTH * zoomLevel}px`,
+            minWidth: `${trackWidth}px`,
             height: '280px',
-            padding: '0 60px',
+            padding: `0 ${TRACK_PADDING}px`,
           }}
         >
-          {/* Ruler — the axis line and year marks */}
           <TimelineRuler
             years={RULER_YEARS}
             breakStart={BREAK_SEGMENT_START}
             breakEnd={BREAK_SEGMENT_END}
           />
-
-          {/* Story markers */}
-          {timelineStories.map(({ story, universeDate, position, hook, viktorCommentary }) => (
+          {timelineStories.map(({ story, universeDate, position, accentColor }) => (
             <TimelineMarker
               key={story.slug}
               story={story}
               universeDate={universeDate}
               position={position}
-              hook={hook}
-              viktorCommentary={viktorCommentary}
+              accentColor={accentColor}
               isActive={activeSlug === story.slug}
-              onActivate={(slug) => {
-                setActiveSlug((prev) => (prev === slug ? null : slug));
-              }}
+              onActivate={(slug) => setActiveSlug((prev) => (prev === slug ? null : slug))}
             />
           ))}
         </div>
       </div>
 
-      {/* Zoom controls */}
+      {/* ── Active story card ─────────────────────────────────────────────────
+          Rendered here (outside the scroll container) so it escapes the
+          overflow clipping that overflow-x: auto forces on the scroll div. */}
+      {activeStory && (
+        <div
+          aria-live="polite"
+          style={{
+            position: 'absolute',
+            left: `${cardX}px`,
+            top: `${RULER_Y}px`,
+            transform: 'translateX(-50%)',
+            zIndex: 40,
+            pointerEvents: 'none',
+          }}
+        >
+          <div style={{ pointerEvents: 'auto' }}>
+            <StoryCard
+              story={activeStory.story}
+              hook={activeStory.hook}
+              viktorCommentary={activeStory.viktorCommentary}
+              accentColor={activeStory.accentColor}
+              position={activeStory.position}
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Zoom controls — centered below timeline */}
       <div
-        className="flex items-center gap-2 px-4 pb-3"
-        style={{ justifyContent: 'flex-end' }}
+        className="flex items-center justify-center gap-3 px-4 pb-3 pt-1"
         onClick={(e) => e.stopPropagation()}
       >
-        <span className="text-xs" style={{ color: 'rgba(107,107,123,0.5)' }}>
+        <span className="text-xs text-white/40">
           Ctrl + scroll to zoom
         </span>
         <button
@@ -307,16 +333,16 @@ export function TimelineView({ stories }: TimelineViewProps) {
           className="flex items-center justify-center rounded transition-colors disabled:opacity-30"
           style={{
             width: '24px', height: '24px',
-            background: 'rgba(255,255,255,0.05)',
-            border: '1px solid rgba(255,255,255,0.1)',
-            color: 'rgba(200,200,210,0.8)',
-            fontSize: '14px',
+            background: 'rgba(255,255,255,0.07)',
+            border: '1px solid rgba(255,255,255,0.15)',
+            color: 'rgba(255,255,255,0.85)',
+            fontSize: '16px',
             lineHeight: 1,
           }}
         >
           −
         </button>
-        <span className="text-xs font-mono" style={{ color: 'rgba(107,107,123,0.7)', minWidth: '36px', textAlign: 'center' }}>
+        <span className="text-xs font-mono text-white/60" style={{ minWidth: '36px', textAlign: 'center' }}>
           {Math.round(zoomLevel * 100)}%
         </span>
         <button
@@ -327,10 +353,10 @@ export function TimelineView({ stories }: TimelineViewProps) {
           className="flex items-center justify-center rounded transition-colors disabled:opacity-30"
           style={{
             width: '24px', height: '24px',
-            background: 'rgba(255,255,255,0.05)',
-            border: '1px solid rgba(255,255,255,0.1)',
-            color: 'rgba(200,200,210,0.8)',
-            fontSize: '14px',
+            background: 'rgba(255,255,255,0.07)',
+            border: '1px solid rgba(255,255,255,0.15)',
+            color: 'rgba(255,255,255,0.85)',
+            fontSize: '16px',
             lineHeight: 1,
           }}
         >
