@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "slug": "genesis-mission-q1-2026",
+    "title": "Genesis Mission: Q1 2026 Interactive Status Report",
+    "summary": "Launched in late 2025, the Genesis Mission is a comprehensive initiative to rapidly modernize the U.S. energy infrastructure. Track progress, funding distribution, and the projected path to a 100% carbon-free grid by 2035.",
+    "lastUpdated": "2026-03-25",
+    "updateFrequency": "quarterly",
+    "componentId": "genesis-mission",
+    "tags": ["energy", "infrastructure", "policy", "DOE"]
+  },
+  "subtitle": "Department of Energy \u2022 Status Report",
+  "description": "Launched in late 2025, the Genesis Mission is a comprehensive initiative to rapidly modernize the U.S. energy infrastructure. This interactive dashboard provides a real-time overview of our progress, funding distribution, and the projected path to a 100% carbon-free grid by 2035.",
+  "kpis": [
+    { "label": "Total Budget", "value": "$50.0B", "subtext": "Appropriated", "icon": "\ud83d\udcb0" },
+    { "label": "Active Projects", "value": "142", "subtext": "Nationwide", "icon": "\ud83c\udfd7\ufe0f" },
+    { "label": "States Reached", "value": "38", "subtext": "of 50", "icon": "\ud83e\udd1d" },
+    { "label": "Target Year", "value": "2035", "subtext": "Carbon-free grid", "icon": "\ud83c\udfaf" }
+  ],
+  "timeline": [
+    {
+      "id": "launch",
+      "label": "Q4 2025",
+      "title": "Mission Launch & Architecture",
+      "description": "The Genesis Mission was officially enacted. Initial focus was on establishing the technical architecture, finalizing the budget allocation frameworks, and opening the portal for state-level proposals.",
+      "status": "completed",
+      "milestones": [
+        { "text": "Legislation passed and $50B appropriated", "done": true },
+        { "text": "Core leadership team established", "done": true },
+        { "text": "Initial RFI (Request for Information) published", "done": true }
+      ],
+      "icon": "\ud83d\ude80"
+    },
+    {
+      "id": "current",
+      "label": "Q1 2026",
+      "title": "Initial Seed Funding & Deployment",
+      "description": "Currently, the DOE is actively distributing the first $15 Billion tranche of the total budget. Focus areas include finalizing state-level grid modernization grants and initiating AI-driven energy load balancing pilots in high-demand metropolitan areas.",
+      "status": "in-progress",
+      "milestones": [
+        { "text": "State grant applications processed: 100%", "done": true },
+        { "text": "Initial funds disbursed: 45% of Q1 target", "done": false },
+        { "text": "AI Pilot programs initiated in 3 major cities", "done": false }
+      ],
+      "icon": "\ud83c\udfd7\ufe0f"
+    },
+    {
+      "id": "proto",
+      "label": "Q3 2027",
+      "title": "Grid Prototypes & SMR Groundbreaking",
+      "description": "By late 2027, the first next-generation smart grids will go live. Additionally, groundbreaking will commence for the first commercially viable Small Modular Reactors (SMRs) funded by the initiative.",
+      "status": "upcoming",
+      "milestones": [
+        { "text": "Activation of 5 regional AI smart-grids", "done": false },
+        { "text": "SMR Site preparation completed", "done": false },
+        { "text": "Workforce retraining milestone: 50,000 workers", "done": false }
+      ],
+      "icon": "\u269b\ufe0f"
+    },
+    {
+      "id": "scale",
+      "label": "2030",
+      "title": "The 50% Clean Energy Milestone",
+      "description": "The critical midpoint of the Genesis Mission. Success is defined by achieving a 50% reduction in carbon emissions compared to 2005 levels, heavily reliant on the scaling of completed 2026\u20132028 projects.",
+      "status": "upcoming",
+      "milestones": [
+        { "text": "Complete phase-out of unmitigated coal", "done": false },
+        { "text": "50% clean energy integration achieved", "done": false },
+        { "text": "Nationwide V2G (Vehicle-to-Grid) interoperability", "done": false }
+      ],
+      "icon": "\ud83c\udf0d"
+    }
+  ],
+  "budgetAllocation": [
+    {
+      "category": "Grid Modernization",
+      "percentage": 40,
+      "amount": "$20 Billion",
+      "description": "Upgrading transmission lines, implementing AI-driven load balancing, and increasing physical grid resilience against extreme weather events.",
+      "color": "#48CAE4",
+      "icon": "\u26a1"
+    },
+    {
+      "category": "Advanced Nuclear (SMRs)",
+      "percentage": 25,
+      "amount": "$12.5 Billion",
+      "description": "Funding research, regulatory streamlining, and initial construction of Small Modular Reactors to provide stable, carbon-free base load power.",
+      "color": "#2A9D8F",
+      "icon": "\u269b\ufe0f"
+    },
+    {
+      "category": "Renewables & Storage",
+      "percentage": 20,
+      "amount": "$10 Billion",
+      "description": "Accelerating next-gen solar efficiency, offshore wind deployment, and crucial investments in utility-scale solid-state battery storage.",
+      "color": "#F4A261",
+      "icon": "\u2600\ufe0f"
+    },
+    {
+      "category": "Workforce Transition",
+      "percentage": 15,
+      "amount": "$7.5 Billion",
+      "description": "Grants and training programs to transition fossil-fuel workers into high-paying roles within the clean energy sector.",
+      "color": "#7B2CBF",
+      "icon": "\ud83d\udc77"
+    }
+  ],
+  "regionalData": [
+    { "region": "West & Pacific", "funding": 5.2, "projects": 45 },
+    { "region": "Midwest & Plains", "funding": 4.8, "projects": 52 },
+    { "region": "South", "funding": 3.1, "projects": 28 },
+    { "region": "Northeast", "funding": 1.9, "projects": 17 }
+  ],
+  "projections": [
+    { "year": "2025", "coalAndGas": 45, "nuclear": 18, "renewables": 25, "naturalGasCCS": 12 },
+    { "year": "2028", "coalAndGas": 30, "nuclear": 20, "renewables": 38, "naturalGasCCS": 12 },
+    { "year": "2030", "coalAndGas": 15, "nuclear": 24, "renewables": 50, "naturalGasCCS": 11 },
+    { "year": "2032", "coalAndGas": 5, "nuclear": 28, "renewables": 58, "naturalGasCCS": 9 },
+    { "year": "2035", "coalAndGas": 0, "nuclear": 30, "renewables": 60, "naturalGasCCS": 10 }
+  ],
+  "projectionNotes": [
+    {
+      "title": "Coal Phase-out",
+      "description": "Targeting a complete cessation of unmitigated coal power generation by 2030, replaced primarily by wind and solar arrays built on former industrial sites."
+    },
+    {
+      "title": "Nuclear Renaissance",
+      "description": "Small Modular Reactors (SMRs) are projected to account for 30% of base-load generation by 2035, providing stable, carbon-free power regardless of weather."
+    },
+    {
+      "title": "Renewable Dominance",
+      "description": "Solar, Wind, and Hydro are expected to collectively provide 60% of the grid's power, supported by massive investments in solid-state battery storage."
+    }
+  ]
+}

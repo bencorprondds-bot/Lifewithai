@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { getAllStories, getAllBlogPosts, getAllKnowledgeEntries } from '@/lib/content';
+import { getAllStories, getAllBlogPosts, getAllKnowledgeEntries, getAllInfographics } from '@/lib/content';
 import { DOMAINS } from '@/lib/types';
 
 const BASE_URL = 'https://lifewithai.ai';
@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/brief`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${BASE_URL}/podcast`, lastModified: now, changeFrequency: 'weekly', priority: 0.5 },
     { url: `${BASE_URL}/mcp`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${BASE_URL}/infographics`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
   ];
 
   // Stories
@@ -54,5 +55,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...staticPages, ...storyPages, ...blogPages, ...domainPages, ...entryPages];
+  // Infographics
+  const infographics = getAllInfographics();
+  const infographicPages: MetadataRoute.Sitemap = infographics.map((info) => ({
+    url: `${BASE_URL}/infographics/${info.slug}`,
+    lastModified: info.lastUpdated || now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...storyPages, ...blogPages, ...infographicPages, ...domainPages, ...entryPages];
 }

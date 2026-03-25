@@ -22,6 +22,7 @@ import type {
   PipelineData,
   MissionControlData,
   StoryExperience,
+  InfographicMeta,
 } from './types';
 import { DOMAINS } from './types';
 
@@ -31,6 +32,7 @@ const STORIES_DIR = path.join(CONTENT_DIR, 'stories');
 const BLOG_DIR = path.join(CONTENT_DIR, 'blog');
 const PAGES_DIR = path.join(CONTENT_DIR, 'pages');
 const EXPERIENCES_DIR = path.join(CONTENT_DIR, 'experiences');
+const INFOGRAPHICS_DIR = path.join(CONTENT_DIR, 'infographics');
 
 // --- Utility: recursively find all .md files in a directory ---
 
@@ -316,6 +318,45 @@ export function getExperience(slug: string): StoryExperience | null {
 export function getAllExperienceSlugs(): string[] {
   if (!fs.existsSync(EXPERIENCES_DIR)) return [];
   return fs.readdirSync(EXPERIENCES_DIR)
+    .filter((f) => f.endsWith('.json'))
+    .map((f) => f.replace(/\.json$/, ''));
+}
+
+// --- Infographics ---
+
+export function getAllInfographics(): InfographicMeta[] {
+  if (!fs.existsSync(INFOGRAPHICS_DIR)) return [];
+  const files = fs.readdirSync(INFOGRAPHICS_DIR).filter((f) => f.endsWith('.json'));
+  const metas: InfographicMeta[] = [];
+
+  for (const file of files) {
+    try {
+      const raw = fs.readFileSync(path.join(INFOGRAPHICS_DIR, file), 'utf-8').replace(/^\uFEFF/, '');
+      const data = JSON.parse(raw);
+      if (data.meta) metas.push(data.meta as InfographicMeta);
+    } catch (err) {
+      console.error(`Error parsing infographic ${file}:`, err);
+    }
+  }
+
+  return metas.sort((a, b) => b.lastUpdated.localeCompare(a.lastUpdated));
+}
+
+export function getInfographic<T = unknown>(slug: string): T | null {
+  const filePath = path.join(INFOGRAPHICS_DIR, slug + '.json');
+  if (!fs.existsSync(filePath)) return null;
+  try {
+    const raw = fs.readFileSync(filePath, 'utf-8').replace(/^\uFEFF/, '');
+    return JSON.parse(raw) as T;
+  } catch (err) {
+    console.error(`Error parsing infographic ${filePath}:`, err);
+    return null;
+  }
+}
+
+export function getAllInfographicSlugs(): string[] {
+  if (!fs.existsSync(INFOGRAPHICS_DIR)) return [];
+  return fs.readdirSync(INFOGRAPHICS_DIR)
     .filter((f) => f.endsWith('.json'))
     .map((f) => f.replace(/\.json$/, ''));
 }

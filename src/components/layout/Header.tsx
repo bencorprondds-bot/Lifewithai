@@ -12,6 +12,7 @@ const NAV_ITEMS = [
   { href: '/activity', label: 'Activity' },
   { href: '/brief', label: 'The Brief' },
   { href: '/podcast', label: 'Podcast' },
+  { href: '/infographics', label: 'Infographics' },
   { href: '/mission-control', label: 'Mission Control' },
   { href: '/about', label: 'About' },
 ];

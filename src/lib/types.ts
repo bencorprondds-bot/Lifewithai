@@ -425,6 +425,81 @@ export interface TierRingExperience {
 // Discriminated union on experienceType
 export type StoryExperience = FlowDiagramExperience | TierRingExperience;
 
+// ============================================================
+// Infographics
+// ============================================================
+
+export type UpdateFrequency = 'quarterly' | 'monthly' | 'annual' | 'one-time';
+
+export interface InfographicMeta {
+  slug: string;
+  title: string;
+  summary: string;
+  lastUpdated: string;
+  updateFrequency: UpdateFrequency;
+  componentId: string;
+  tags?: string[];
+}
+
+// --- Genesis Mission Data Types ---
+
+export interface GenesisKPI {
+  label: string;
+  value: string;
+  subtext: string;
+  icon: string;
+}
+
+export interface GenesisTimelinePhase {
+  id: string;
+  label: string;
+  title: string;
+  description: string;
+  status: 'completed' | 'in-progress' | 'upcoming';
+  milestones: Array<{ text: string; done: boolean }>;
+  icon: string;
+}
+
+export interface GenesisBudgetCategory {
+  category: string;
+  percentage: number;
+  amount: string;
+  description: string;
+  color: string;
+  icon: string;
+}
+
+export interface GenesisRegionalData {
+  region: string;
+  funding: number;
+  projects: number;
+}
+
+export interface GenesisProjectionYear {
+  year: string;
+  coalAndGas: number;
+  nuclear: number;
+  renewables: number;
+  naturalGasCCS: number;
+}
+
+export interface GenesisBottomNote {
+  title: string;
+  description: string;
+}
+
+export interface GenesisInfographicData {
+  meta: InfographicMeta;
+  subtitle: string;
+  description: string;
+  kpis: GenesisKPI[];
+  timeline: GenesisTimelinePhase[];
+  budgetAllocation: GenesisBudgetCategory[];
+  regionalData: GenesisRegionalData[];
+  projections: GenesisProjectionYear[];
+  projectionNotes: GenesisBottomNote[];
+}
+
 // Type guards for experience dispatch
 export function isTierRingExperience(exp: StoryExperience): exp is TierRingExperience {
   return exp.experienceType === 'tier-rings';
