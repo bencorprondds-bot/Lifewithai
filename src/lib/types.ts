@@ -31,8 +31,8 @@ export type KEDLLevel = 100 | 200 | 300 | 350 | 400 | 500;
 export type ConfidenceLevel = 1 | 2 | 3 | 4 | 5;
 export type EntryType = 'concept' | 'analysis' | 'specification' | 'reference' | 'open-question';
 export type EntryStatus = 'draft' | 'published' | 'superseded';
-export type CitationType = 'peer-reviewed' | 'standard' | 'project-data' | 'internal' | 'expert-judgment';
-export type RelationshipType = 'depends-on' | 'informs' | 'contradicts' | 'extends' | 'alternative-to';
+export type CitationType = 'peer-reviewed' | 'standard' | 'project-data' | 'internal' | 'expert-judgment' | 'government' | 'government-report' | 'government-data' | 'industry' | 'industry-report' | 'news' | 'reference';
+export type RelationshipType = 'depends-on' | 'informs' | 'contradicts' | 'extends' | 'alternative-to' | 'parallel' | 'relates-to' | 'related' | 'related-to';
 
 export interface Author {
   id: string;

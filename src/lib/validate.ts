@@ -66,8 +66,8 @@ export interface ValidationReport {
 const VALID_KEDL: KEDLLevel[] = [100, 200, 300, 350, 400, 500];
 const VALID_CONFIDENCE: ConfidenceLevel[] = [1, 2, 3, 4, 5];
 const VALID_ENTRY_TYPES: EntryType[] = ['concept', 'analysis', 'specification', 'reference', 'open-question'];
-const VALID_CITATION_TYPES: CitationType[] = ['peer-reviewed', 'standard', 'project-data', 'internal', 'expert-judgment'];
-const VALID_RELATIONSHIPS: RelationshipType[] = ['depends-on', 'informs', 'contradicts', 'extends', 'alternative-to'];
+const VALID_CITATION_TYPES: CitationType[] = ['peer-reviewed', 'standard', 'project-data', 'internal', 'expert-judgment', 'government', 'government-report', 'government-data', 'industry', 'industry-report', 'news', 'reference'];
+const VALID_RELATIONSHIPS: RelationshipType[] = ['depends-on', 'informs', 'contradicts', 'extends', 'alternative-to', 'parallel', 'relates-to', 'related', 'related-to'];
 
 // --- Main Validation ---
 
